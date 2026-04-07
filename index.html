@@ -4,267 +4,230 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Full Stack Interview Prep</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#f0f0f8;--muted:#8888aa;
-  --gold:#c9a84c;--gold2:#f0c96a;--gold3:rgba(201,168,76,0.2);
-  --green:#2ecc71;--red:#e74c3c;--blue:#5b9cf6;
-  --purple:#9b7ff4;--teal:#1abc9c;--orange:#f39c12;
-  --pink:#e91e8c;--cyan:#00bcd4;
-}
+:root{--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a26;--border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.13);--text:#f0f0f8;--muted:#8888aa;--gold:#c9a84c;--gold2:#f0c96a;--green:#2ecc71;--red:#e74c3c;--blue:#5b9cf6;--purple:#9b7ff4;--teal:#1abc9c;--orange:#f39c12}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7}
-button,a{touch-action:manipulation}
-code{font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:4px;font-size:.85em;color:var(--gold2)}
-
-/* HERO */
+code{font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,.09);padding:1px 5px;border-radius:4px;font-size:.82em;color:var(--gold2)}
 .hero{position:relative;overflow:hidden;padding:64px 20px 52px;text-align:center;border-bottom:1px solid var(--border)}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(201,168,76,.14),transparent)}
 .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:500;color:var(--gold2);letter-spacing:.06em;margin-bottom:20px;text-transform:uppercase}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,7vw,54px);font-weight:800;line-height:1.1;margin-bottom:14px;background:linear-gradient(135deg,#fff 30%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto 32px}
-.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.btn-g{padding:13px 28px;border-radius:9px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-block;font-family:'Syne',sans-serif}
-.btn-g.p{background:var(--gold);color:#0a0a0f}.btn-g.p:hover{background:var(--gold2);transform:translateY(-1px)}
-.btn-g.s{border:1px solid var(--border2);color:var(--text)}.btn-g.s:hover{background:var(--bg3)}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:600px;margin:28px auto 0}
-.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center}
-.stat-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--gold2)}
-.stat-l{font-size:11px;color:var(--muted);margin-top:2px}
-
-/* SECTION */
-.section{max-width:960px;margin:0 auto;padding:52px 20px}
-.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:36px}
-.sec-n{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;color:rgba(201,168,76,.15);line-height:1}
-.sec-t{font-family:'Syne',sans-serif;font-size:26px;font-weight:700}
-.sec-s{font-size:13px;color:var(--muted);margin-top:3px}
-hr.div{border:none;border-top:1px solid var(--border)}
-.sec-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* FILTER TABS */
-.filter-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,7vw,52px);font-weight:800;line-height:1.1;margin-bottom:14px;background:linear-gradient(135deg,#fff 30%,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto 28px}
+.hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.abtn{padding:13px 26px;border-radius:9px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;display:inline-block;font-family:'Syne',sans-serif;cursor:pointer;border:none}
+.abtn.p{background:var(--gold);color:#0a0a0f}.abtn.p:hover{background:var(--gold2);transform:translateY(-1px)}
+.abtn.s{border:1px solid var(--border2);color:var(--text);background:transparent}.abtn.s:hover{background:var(--bg3)}
+.srow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:580px;margin:28px auto 0}
+.sbox{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center}
+.sn{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--gold2)}
+.sl{font-size:11px;color:var(--muted);margin-top:2px}
+.sec{max-width:960px;margin:0 auto;padding:50px 20px}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.snum{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;color:rgba(201,168,76,.15);line-height:1}
+.st{font-family:'Syne',sans-serif;font-size:24px;font-weight:700}
+.ss{font-size:13px;color:var(--muted);margin-top:3px}
+hr{border:none;border-top:1px solid var(--border)}
+.lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.ftabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .ftab{padding:6px 14px;border-radius:100px;border:1px solid var(--border);font-size:12px;cursor:pointer;color:var(--muted);background:none;transition:all .15s;font-family:'DM Sans',sans-serif}
-.ftab.active{border-color:var(--gold3);background:rgba(201,168,76,.1);color:var(--gold2)}
-
-/* TOPIC GRID */
-.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.ftab.on{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.1);color:var(--gold2)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .tc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
 .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cc),transparent)}
-.tc:hover{border-color:var(--border2);transform:translateY(-2px);background:var(--bg3)}
-.tc.open{border-color:var(--cc)}
-.tc-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.tc-icon{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;background:rgba(255,255,255,.05);flex-shrink:0;font-family:'JetBrains Mono',monospace;font-weight:500;font-size:13px}
-.tc-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
-.tc-count{font-size:11px;color:var(--muted)}
-.tc-desc{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5}
-.tc-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
-.tc-body.open{display:block}
-.concept{margin-bottom:14px;padding:11px;background:rgba(255,255,255,.03);border-radius:7px;border-left:2px solid var(--cc)}
-.c-q{font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px}
-.c-a{font-size:12px;color:var(--muted);line-height:1.6}
-.tbtn{font-size:12px;color:var(--gold);background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',sans-serif}
-.tbtn:hover{color:var(--gold2)}
-
-/* QUIZ */
-.quiz-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.qcfg{padding:28px 24px}
-.qcfg h3{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:6px}
-.qcfg p{font-size:13px;color:var(--muted);margin-bottom:24px}
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+.tc:hover{border-color:var(--border2);transform:translateY(-2px)}
+.tc.on{border-color:var(--cc)}
+.ttop{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.tic{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;background:rgba(255,255,255,.05);flex-shrink:0}
+.tn{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
+.tk{font-size:11px;color:var(--muted)}
+.td{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5}
+.tbdy{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.tbdy.on{display:block}
+.cpt{margin-bottom:13px;padding:10px 12px;background:rgba(255,255,255,.03);border-radius:7px;border-left:2px solid var(--cc)}
+.cq{font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px}
+.ca{font-size:12px;color:var(--muted);line-height:1.6}
+.tog{font-size:12px;color:var(--gold);background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',sans-serif}
+.tog:hover{color:var(--gold2)}
+.qwrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.qcfg{padding:28px 22px}
+.qcfg h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.qcfg p{font-size:13px;color:var(--muted);margin-bottom:22px}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
 .dc{border:1px solid var(--border);border-radius:10px;padding:14px 12px;cursor:pointer;transition:all .2s;text-align:center}
 .dc:hover{border-color:var(--border2);background:var(--bg3)}
-.dc.sel{border-color:var(--dcolor);background:rgba(255,255,255,.03)}
-.dc-icon{font-size:24px;margin-bottom:6px}
-.dc-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:3px}
-.dc-desc{font-size:11px;color:var(--muted)}
-.dc-n{font-size:11px;margin-top:5px;font-weight:500}
-.csel{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.dc.on{border-color:var(--dc);background:rgba(255,255,255,.03)}
+.di{font-size:24px;margin-bottom:6px}
+.dn{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:3px}
+.dd{font-size:11px;color:var(--muted)}
+.dq{font-size:11px;margin-top:5px;font-weight:500}
+.csel{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
 .cc{padding:6px 13px;border-radius:100px;border:1px solid var(--border);font-size:12px;cursor:pointer;transition:all .15s;color:var(--muted);background:none;font-family:'DM Sans',sans-serif}
-.cc.active{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.1);color:var(--gold2)}
-.sbtn{width:100%;padding:15px;background:var(--gold);color:#0a0a0f;border:none;border-radius:10px;font-size:15px;font-weight:600;font-family:'Syne',sans-serif;cursor:pointer;transition:all .2s;letter-spacing:.02em}
-.sbtn:hover{background:var(--gold2);transform:translateY(-1px)}
-.sbtn:disabled{opacity:.5;cursor:default;transform:none}
-
-/* QUIZ ACTIVE */
-.qact{display:none;padding:24px 20px}
-.qpb{height:3px;background:var(--border);border-radius:2px;margin-bottom:8px;overflow:hidden}
-.qpf{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;transition:width .4s ease}
-.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:24px}
-.qdbadge{padding:2px 10px;border-radius:100px;font-size:11px;font-weight:500}
-.qcat{display:inline-block;font-size:10px;padding:2px 9px;border-radius:100px;margin-bottom:14px;font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,.07);color:var(--muted)}
-.qtext{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:22px;color:var(--text)}
-.opts{display:grid;gap:9px;margin-bottom:20px}
+.cc.on{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.1);color:var(--gold2)}
+.go{width:100%;padding:15px;background:var(--gold);color:#0a0a0f;border:none;border-radius:10px;font-size:15px;font-weight:600;font-family:'Syne',sans-serif;cursor:pointer;transition:all .2s}
+.go:hover{background:var(--gold2);transform:translateY(-1px)}
+.qactive{display:none;padding:24px 20px}
+.qpbar{height:3px;background:var(--border);border-radius:2px;margin-bottom:8px;overflow:hidden}
+.qpfill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;transition:width .4s ease}
+.qmeta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:22px}
+.dbadge{padding:2px 10px;border-radius:100px;font-size:11px;font-weight:500}
+.qcat{display:inline-block;font-size:10px;padding:2px 9px;border-radius:100px;margin-bottom:12px;font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,.07);color:var(--muted)}
+.qtxt{font-family:'Syne',sans-serif;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:20px}
+.opts{display:grid;gap:9px;margin-bottom:18px}
 .opt{padding:13px 14px;border:1px solid var(--border2);border-radius:10px;cursor:pointer;font-size:13px;transition:all .15s;background:var(--bg3);color:var(--text);text-align:left;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;width:100%}
-.opt:hover:not(.dis){border-color:var(--border2);background:rgba(255,255,255,.06);transform:translateX(3px)}
-.opt.cor{border-color:var(--green);background:rgba(46,204,113,.08)}
-.opt.wrg{border-color:var(--red);background:rgba(231,76,60,.08)}
-.opt.dis{cursor:default}
+.opt:hover{background:rgba(255,255,255,.05);transform:translateX(3px)}
+.opt.cor{border-color:var(--green);background:rgba(46,204,113,.08);transform:none;cursor:default}
+.opt.wrg{border-color:var(--red);background:rgba(231,76,60,.08);transform:none;cursor:default}
+.opt.dis{cursor:default;transform:none}
 .ol{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;flex-shrink:0}
 .opt.cor .ol{background:rgba(46,204,113,.2);color:var(--green)}
 .opt.wrg .ol{background:rgba(231,76,60,.2);color:var(--red)}
 .fb{display:none;padding:14px;border-radius:10px;margin-bottom:18px;font-size:13px;line-height:1.6}
-.fb.show{display:block}
-.fb.cfb{background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.2)}
-.fb.wfb{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.2)}
-.fb-t{font-weight:600;margin-bottom:3px}
-.fb.cfb .fb-t{color:var(--green)}.fb.wfb .fb-t{color:var(--red)}
-.nbtn{width:100%;padding:15px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold2);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Syne',sans-serif;display:none}
-.nbtn.show{display:block}.nbtn:hover{background:rgba(201,168,76,.2)}
-
-/* RESULT */
+.fb.on{display:block}
+.fb.ok{background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.2)}
+.fb.no{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.2)}
+.fbt{font-weight:600;margin-bottom:3px}
+.fb.ok .fbt{color:var(--green)}.fb.no .fbt{color:var(--red)}
+.nxt{width:100%;padding:15px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold2);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Syne',sans-serif;display:none}
+.nxt.on{display:block}.nxt:hover{background:rgba(201,168,76,.2)}
 .qres{display:none;padding:36px 20px;text-align:center}
 .rcirc{width:130px;height:130px;border-radius:50%;margin:0 auto 24px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column}
 .rpct{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;line-height:1}
 .rlbl{font-size:11px;color:var(--muted);margin-top:3px}
-.rtitle{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:6px}
-.rsub{font-size:14px;color:var(--muted);margin-bottom:28px}
-.rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.rtit{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
+.rsub{font-size:14px;color:var(--muted);margin-bottom:26px}
+.rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
 .rs{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 8px}
-.rs-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;line-height:1;margin-bottom:3px}
-.rs-l{font-size:11px;color:var(--muted)}
-.rdet{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:left;margin-bottom:20px}
+.rsn{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;line-height:1;margin-bottom:3px}
+.rsl{font-size:11px;color:var(--muted)}
+.rdet{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:18px;text-align:left;margin-bottom:20px;max-height:400px;overflow-y:auto}
 .rdet h4{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;font-family:'JetBrains Mono',monospace}
-.ri{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.ri{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px solid var(--border)}
 .ri:last-child{border-bottom:none}
-.ri-ico{width:18px;flex-shrink:0;margin-top:2px}
-.ri-q{color:var(--text);font-weight:500;margin-bottom:2px;font-size:13px}
-.ri-a{color:var(--muted);font-size:12px}
+.rii{width:18px;flex-shrink:0;margin-top:1px;font-size:14px}
+.riq{color:var(--text);font-weight:500;font-size:13px;margin-bottom:2px}
+.ria{color:var(--muted);font-size:12px}
 .rbts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .rbt{padding:12px 22px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;transition:all .2s;border:none}
 .rbt.p{background:var(--gold);color:#0a0a0f}.rbt.p:hover{background:var(--gold2)}
 .rbt.g{background:var(--bg3);border:1px solid var(--border2);color:var(--text)}.rbt.g:hover{border-color:rgba(201,168,76,.4)}
-
-/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
   .hero{padding:48px 16px 40px}
-  .hero h1{font-size:30px}
-  .hero p{font-size:13px}
-  .hero-btns{flex-direction:column;align-items:center}
-  .btn-g{width:100%;max-width:280px;text-align:center;padding:14px 20px;font-size:15px}
-  .stats-row{grid-template-columns:repeat(2,1fr);max-width:320px}
-  .section{padding:36px 14px}
-  .sec-n{font-size:34px}
-  .sec-t{font-size:20px}
-  .topic-grid{grid-template-columns:1fr;gap:10px}
-  .tc{padding:14px}
+  .hero h1{font-size:28px}
+  .hbtns{flex-direction:column;align-items:center}
+  .abtn{width:100%;max-width:280px;text-align:center}
+  .srow{grid-template-columns:repeat(2,1fr);max-width:300px}
+  .sec{padding:36px 14px}
+  .snum{font-size:34px}.st{font-size:20px}
+  .tgrid{grid-template-columns:1fr}
   .qcfg{padding:20px 16px}
-  .diff-grid{grid-template-columns:1fr;gap:8px}
+  .dgrid{grid-template-columns:1fr;gap:8px}
   .dc{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 14px}
-  .dc-icon{margin-bottom:0;font-size:22px}
-  .dc-info{flex:1}
-  .dc-name{font-size:13px}
-  .qact{padding:20px 16px}
-  .qtext{font-size:16px;margin-bottom:18px}
+  .di{margin-bottom:0;font-size:20px;flex-shrink:0}
+  .dinfo{flex:1}
+  .qactive{padding:20px 16px}
+  .qtxt{font-size:16px}
   .opt{font-size:13px;padding:13px 12px}
   .qres{padding:28px 14px}
-  .rstats{grid-template-columns:repeat(2,1fr);gap:8px}
+  .rstats{grid-template-columns:repeat(2,1fr)}
   .rbts{flex-direction:column;align-items:center}
   .rbt{width:100%;max-width:300px;padding:14px}
-  .rtitle{font-size:20px}
 }
-@media(max-width:380px){
-  .hero h1{font-size:26px}
-  .qtext{font-size:15px}
-  .opt{font-size:12px}
-}
+@media(max-width:380px){.hero h1{font-size:24px}.qtxt{font-size:15px}.opt{font-size:12px}}
 </style>
 </head>
 <body>
-
 <div class="hero">
   <div class="badge">⭐ Full Stack Interview Prep</div>
   <h1>Guia Completo<br>de Entrevistas</h1>
-  <p>Backend, Frontend, Banco de Dados, Python, C#, JavaScript, DevOps e muito mais.</p>
-  <div class="hero-btns">
-    <a href="#estudo" class="btn-g p">Módulo de estudo</a>
-    <a href="#quiz" class="btn-g s">Ir para o quiz</a>
+  <p>JavaScript, Python, C#, SQL, NoSQL, IA, MCP, Agentes e muito mais.</p>
+  <div class="hbtns">
+    <a href="#study" class="abtn p">Módulo de estudo</a>
+    <a href="#quiz" class="abtn s">Ir para o quiz</a>
   </div>
-  <div class="stats-row">
-    <div class="stat-box"><div class="stat-n" id="cnt-top">12</div><div class="stat-l">tecnologias</div></div>
-    <div class="stat-box"><div class="stat-n" id="cnt-conc">90+</div><div class="stat-l">conceitos</div></div>
-    <div class="stat-box"><div class="stat-n">55</div><div class="stat-l">questões</div></div>
-    <div class="stat-box"><div class="stat-n">3</div><div class="stat-l">níveis</div></div>
+  <div class="srow">
+    <div class="sbox"><div class="sn" id="cnt-t">13</div><div class="sl">tecnologias</div></div>
+    <div class="sbox"><div class="sn" id="cnt-c">95+</div><div class="sl">conceitos</div></div>
+    <div class="sbox"><div class="sn">55</div><div class="sl">questões</div></div>
+    <div class="sbox"><div class="sn">3</div><div class="sl">níveis</div></div>
   </div>
 </div>
 
-<!-- ESTUDO -->
-<div class="section" id="estudo">
-  <div class="sec-head">
-    <div class="sec-n">01</div>
-    <div><div class="sec-t">Módulo de Estudo</div><div class="sec-s">Clique em cada tecnologia para expandir</div></div>
+<div class="sec" id="study">
+  <div class="sh">
+    <div class="snum">01</div>
+    <div><div class="st">Módulo de Estudo</div><div class="ss">Toque em cada tecnologia para expandir</div></div>
   </div>
-  <div class="filter-tabs" id="ftabs"></div>
-  <div class="topic-grid" id="tgrid"></div>
+  <div class="ftabs" id="ftabs"></div>
+  <div class="tgrid" id="tgrid"></div>
 </div>
 
-<hr class="div">
+<hr>
 
-<!-- QUIZ -->
-<div class="section" id="quiz">
-  <div class="sec-head">
-    <div class="sec-n">02</div>
-    <div><div class="sec-t">Questionário</div><div class="sec-s">Selecione nível e categorias</div></div>
+<div class="sec" id="quiz">
+  <div class="sh">
+    <div class="snum">02</div>
+    <div><div class="st">Questionário</div><div class="ss">Selecione nível e categorias</div></div>
   </div>
-  <div class="quiz-wrap">
+  <div class="qwrap">
     <div class="qcfg" id="qcfg">
       <h3>Configure seu quiz</h3>
-      <p>Escolha a dificuldade e as categorias que quer praticar</p>
-      <div class="sec-label">Nível de dificuldade</div>
-      <div class="diff-grid">
-        <div class="dc" data-d="easy" style="--dcolor:var(--green)" onclick="selDiff('easy')">
-          <div class="dc-icon">🟢</div>
-          <div class="dc-info"><div class="dc-name" style="color:var(--green)">Júnior</div><div class="dc-desc">Definições e fundamentos</div><div class="dc-n" style="color:var(--green)">15 perguntas</div></div>
+      <p>Escolha a dificuldade e as categorias</p>
+      <div class="lbl">Nível de dificuldade</div>
+      <div class="dgrid" id="dgrid">
+        <div class="dc" id="d-easy" style="--dc:var(--green)">
+          <div class="di">🟢</div>
+          <div class="dinfo"><div class="dn" style="color:var(--green)">Júnior</div><div class="dd">Fundamentos</div><div class="dq" style="color:var(--green)">15 perguntas</div></div>
         </div>
-        <div class="dc sel" data-d="mid" style="--dcolor:var(--gold)" onclick="selDiff('mid')">
-          <div class="dc-icon">🟡</div>
-          <div class="dc-info"><div class="dc-name" style="color:var(--gold)">Pleno</div><div class="dc-desc">Aplicação prática</div><div class="dc-n" style="color:var(--gold)">20 perguntas</div></div>
+        <div class="dc on" id="d-mid" style="--dc:var(--gold)">
+          <div class="di">🟡</div>
+          <div class="dinfo"><div class="dn" style="color:var(--gold)">Pleno</div><div class="dd">Aplicação prática</div><div class="dq" style="color:var(--gold)">20 perguntas</div></div>
         </div>
-        <div class="dc" data-d="hard" style="--dcolor:var(--red)" onclick="selDiff('hard')">
-          <div class="dc-icon">🔴</div>
-          <div class="dc-info"><div class="dc-name" style="color:var(--red)">Sênior</div><div class="dc-desc">Arquitetura e trade-offs</div><div class="dc-n" style="color:var(--red)">20 perguntas</div></div>
+        <div class="dc" id="d-hard" style="--dc:var(--red)">
+          <div class="di">🔴</div>
+          <div class="dinfo"><div class="dn" style="color:var(--red)">Sênior</div><div class="dd">Arquitetura</div><div class="dq" style="color:var(--red)">20 perguntas</div></div>
         </div>
       </div>
-      <div class="sec-label">Categorias</div>
+      <div class="lbl">Categorias</div>
       <div class="csel" id="csel"></div>
-      <button class="sbtn" onclick="startQ()">Iniciar Quiz →</button>
+      <button class="go" id="gobtn">Iniciar Quiz →</button>
     </div>
-    <div class="qact" id="qact">
-      <div class="qpb"><div class="qpf" id="qpf"></div></div>
-      <div class="qmeta"><span id="qpos">1 de 20</span><span id="qdbadge" class="qdbadge"></span></div>
+    <div class="qactive" id="qactive">
+      <div class="qpbar"><div class="qpfill" id="qpf"></div></div>
+      <div class="qmeta"><span id="qpos">1 de 20</span><span id="qbadge" class="dbadge"></span></div>
       <div class="qcat" id="qcat"></div>
-      <div class="qtext" id="qtext"></div>
+      <div class="qtxt" id="qtxt"></div>
       <div class="opts" id="qopts"></div>
-      <div class="fb" id="qfb"><div class="fb-t" id="fbt"></div><div id="fbb"></div></div>
-      <button class="nbtn" id="qnext" onclick="nextQ()">Próxima →</button>
+      <div class="fb" id="qfb"><div class="fbt" id="fbt"></div><div id="fbb"></div></div>
+      <button class="nxt" id="qnxt">Próxima →</button>
     </div>
     <div class="qres" id="qres">
       <div class="rcirc">
         <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 130 130">
-          <circle cx="65" cy="65" r="57" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="7"/>
-          <circle cx="65" cy="65" r="57" fill="none" stroke-width="7" stroke-linecap="round"
-            id="rarc" stroke="var(--gold)" stroke-dasharray="358" stroke-dashoffset="358"
+          <circle cx="65" cy="65" r="57" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="7"/>
+          <circle id="rarc" cx="65" cy="65" r="57" fill="none" stroke="var(--gold)" stroke-width="7"
+            stroke-linecap="round" stroke-dasharray="358" stroke-dashoffset="358"
             transform="rotate(-90 65 65)" style="transition:stroke-dashoffset 1.2s ease"/>
         </svg>
-        <div class="rpct" id="rpct">0%</div><div class="rlbl">acertos</div>
+        <div class="rpct" id="rpct">0%</div>
+        <div class="rlbl">acertos</div>
       </div>
-      <div class="rtitle" id="rtitle"></div>
+      <div class="rtit" id="rtit"></div>
       <div class="rsub" id="rsub"></div>
       <div class="rstats">
-        <div class="rs"><div class="rs-n" id="rs-t">0</div><div class="rs-l">total</div></div>
-        <div class="rs"><div class="rs-n" style="color:var(--green)" id="rs-r">0</div><div class="rs-l">acertos</div></div>
-        <div class="rs"><div class="rs-n" style="color:var(--red)" id="rs-w">0</div><div class="rs-l">erros</div></div>
-        <div class="rs"><div class="rs-n" style="color:var(--gold)" id="rs-p">0%</div><div class="rs-l">aproveit.</div></div>
+        <div class="rs"><div class="rsn" id="rs-t">0</div><div class="rsl">total</div></div>
+        <div class="rs"><div class="rsn" id="rs-r" style="color:var(--green)">0</div><div class="rsl">acertos</div></div>
+        <div class="rs"><div class="rsn" id="rs-w" style="color:var(--red)">0</div><div class="rsl">erros</div></div>
+        <div class="rs"><div class="rsn" id="rs-p" style="color:var(--gold)">0%</div><div class="rsl">aproveit.</div></div>
       </div>
       <div class="rdet"><h4>Revisão detalhada</h4><div id="ritems"></div></div>
       <div class="rbts">
-        <button class="rbt p" onclick="retryQ()">Repetir quiz</button>
-        <button class="rbt g" onclick="backCfg()">Mudar config</button>
-        <button class="rbt g" onclick="scrollTo({top:0,behavior:'smooth'})">Revisar estudo</button>
+        <button class="rbt p" id="rbretry">Repetir quiz</button>
+        <button class="rbt g" id="rbcfg">Mudar config</button>
+        <button class="rbt g" id="rbtop">Voltar ao topo</button>
       </div>
     </div>
   </div>
@@ -272,329 +235,440 @@ hr.div{border:none;border-top:1px solid var(--border)}
 <div style="height:60px"></div>
 
 <script>
-// ============================================================
-//  DADOS DE ESTUDO
-// ============================================================
-const TOPICS = [
-{cat:"js",icon:"JS",name:"JavaScript",color:"#f7df1e",group:"Frontend",
- desc:"Base de toda a web — fundamentos que caem em toda entrevista.",
- concepts:[
-  {q:"Hoisting",a:"Declarações <code>var</code>/<code>function</code> são elevadas ao topo do escopo. <code>let</code>/<code>const</code> ficam em temporal dead zone até a linha de declaração."},
-  {q:"== vs ===",a:"<code>==</code> compara com coerção de tipo (1 == '1' → true). <code>===</code> compara valor e tipo (1 === '1' → false). Sempre use <code>===</code> em produção."},
-  {q:"Event Loop",a:"JS é single-thread. A Call Stack executa código síncrono. Callbacks async vão à Task Queue. O Event Loop move tarefas à Stack quando ela está vazia."},
-  {q:"Closure",a:"Função que mantém acesso ao escopo onde foi criada após ele encerrar. Base de módulos, encapsulamento e currying."},
-  {q:"Promise / async-await",a:"Promise: objeto com 3 estados (pending, fulfilled, rejected). async/await é açúcar sintático — torna código async legível como síncrono."},
-  {q:"Prototype chain",a:"Quando propriedade não é encontrada no objeto, JS sobe na cadeia de protótipos até null. Classes ES6 são açúcar sintático sobre prototypes."},
-  {q:"var vs let vs const",a:"<code>var</code>: escopo função, hoisting. <code>let</code>: escopo bloco, sem hoisting visível. <code>const</code>: bloco, não permite reatribuição (objeto interno pode ser mutado)."},
-  {q:"Spread e destructuring",a:"Spread: <code>const novo = {...obj, k:'v'}</code>. Destructuring: <code>const {nome} = user</code> ou <code>const [a,b] = arr</code>."},
- ]},
-{cat:"ts",icon:"TS",name:"TypeScript",color:"#3178c6",group:"Frontend",
- desc:"Tipagem estática — detecta erros em tempo de compilação.",
- concepts:[
-  {q:"Por que TypeScript?",a:"Detecta erros antes de rodar. Melhora autocomplete, refactor e documentação implícita. Compila para JS puro."},
-  {q:"Interface vs Type",a:"<code>interface</code>: forma de objetos, suporta extends e declaration merging. <code>type</code>: mais flexível, suporta unions, intersections e primitivos."},
-  {q:"Generics",a:"Tipos parametrizados: <code>function first&lt;T&gt;(arr: T[]): T</code>. Evita duplicação mantendo type safety."},
-  {q:"Optional chaining (?.) e nullish (??)",a:"<code>user?.address?.street</code> retorna undefined sem erro. <code>valor ?? 'default'</code> usa default só se valor for null/undefined (diferente de || que considera 0 e '' falsy)."},
-  {q:"Enums e Union Types",a:"<code>enum Status { Ativo, Inativo }</code> ou <code>type Status = 'ativo' | 'inativo'</code>. Union types são mais leves (não geram código JS extra)."},
- ]},
-{cat:"react",icon:"⚛",name:"React",color:"#5b9cf6",group:"Frontend",
- desc:"Biblioteca de UI — componentização, hooks e otimização.",
- concepts:[
-  {q:"Virtual DOM",a:"React mantém cópia em memória do DOM real. Faz diffing entre versões e aplica apenas as mudanças necessárias (reconciliation)."},
-  {q:"useState e useEffect",a:"<code>useState</code>: estado local com re-render. <code>useEffect</code>: efeitos colaterais após render. Array vazio = só na montagem. Retorno = cleanup."},
-  {q:"useCallback vs useMemo",a:"<code>useMemo</code>: memoiza resultado de cálculo. <code>useCallback</code>: memoiza referência de função. Usar com React.memo no filho para evitar re-renders."},
-  {q:"Context API",a:"Compartilha estado entre componentes sem prop drilling. <code>createContext → Provider → useContext</code>. Para estado global simples; para complexo, prefira Zustand/Redux."},
-  {q:"Lifting State Up",a:"Mover state para o ancestral comum quando múltiplos filhos precisam do mesmo dado. Alternativa: Context ou state manager global."},
- ]},
-{cat:"node",icon:"⬢",name:"Node.js",color:"#2ecc71",group:"Backend",
- desc:"Runtime JS no servidor — arquitetura, Express e padrões.",
- concepts:[
-  {q:"Non-blocking I/O",a:"Operações de I/O (banco, arquivo, rede) não bloqueiam a thread. Enquanto aguarda, o Node processa outras requisições. Ideal para alta concorrência."},
-  {q:"Middleware Express",a:"Função com <code>(req, res, next)</code>. Executada em cadeia. Uso: autenticação JWT, rate limiting, CORS, validação, logs."},
-  {q:"JWT Authentication",a:"<code>jwt.sign({id, perfil}, SECRET)</code>. Cliente envia <code>Authorization: Bearer token</code>. Stateless — não requer sessão no servidor."},
-  {q:"Graceful Shutdown",a:"<code>SIGTERM → server.close() → db.end() → process.exit(0)</code>. Aguarda requests em andamento finalizarem antes de encerrar."},
-  {q:"Connection Pooling",a:"Pool de conexões pré-abertas ao banco reutilizadas entre requests. Sem pool: cada request abre conexão nova (~50ms). Com pool: reutiliza conexão existente."},
- ]},
-{cat:"py",icon:"PY",name:"Python",color:"#f7c948",group:"Backend",
- desc:"Linguagem versátil — lógica, sintaxe e padrões de uso.",
- concepts:[
-  {q:"List comprehension",a:"<code>[x*2 for x in lista if x > 0]</code>. Mais conciso e geralmente mais rápido que loop tradicional."},
-  {q:"Decorators",a:"Função que envolve outra para adicionar comportamento. <code>@app.route('/') def index():</code> — o Flask usa decorators extensivamente."},
-  {q:"*args e **kwargs",a:"<code>*args</code>: argumentos posicionais variáveis (tuple). <code>**kwargs</code>: argumentos nomeados variáveis (dict). Permitem funções flexíveis."},
-  {q:"Context managers (with)",a:"<code>with open('file') as f:</code> — garante fechamento do recurso mesmo com exceção. Implementado via <code>__enter__</code> e <code>__exit__</code>."},
-  {q:"GIL (Global Interpreter Lock)",a:"CPython permite apenas uma thread executar bytecode por vez. Para paralelismo real em Python: multiprocessing ou async (I/O bound) com asyncio."},
-  {q:"Virtual environments",a:"<code>python -m venv env</code> isola dependências por projeto. Evita conflitos entre versões de bibliotecas. Use requirements.txt ou pyproject.toml."},
- ]},
-{cat:"cs",icon:"C#",name:"C# / .NET",color:"#9b7ff4",group:"Backend",
- desc:"Linguagem fortemente tipada — OOP, LINQ e ASP.NET.",
- concepts:[
-  {q:"Pilares do OOP",a:"<b>Encapsulamento</b>: ocultar implementação. <b>Herança</b>: reutilizar comportamento. <b>Polimorfismo</b>: mesma interface, comportamentos diferentes. <b>Abstração</b>: modelar conceitos."},
-  {q:"Interface vs Classe Abstrata",a:"Interface: contrato sem implementação, múltipla herança. Classe abstrata: pode ter implementação, apenas herança simples. Use interface para contratos, abstrata para base parcial."},
-  {q:"LINQ",a:"Language Integrated Query — consultas tipadas em coleções: <code>lista.Where(x => x.Ativo).OrderBy(x => x.Nome).Select(x => x.Email)</code>. Lazy evaluation."},
-  {q:"async/await em C#",a:"<code>async Task&lt;T&gt;</code>: método assíncrono que retorna Task. <code>await</code> libera a thread durante operação I/O. Use em controllers ASP.NET para não bloquear o pool."},
-  {q:"Dependency Injection",a:"Padrão central do ASP.NET Core. Registrar serviços no container (<code>builder.Services.AddScoped&lt;IRepo, Repo&gt;()</code>), receber via construtor. Facilita testes e manutenção."},
-  {q:"Entity Framework Core",a:"ORM para .NET. <code>DbContext</code> mapeia classes para tabelas. <code>LINQ to SQL</code> gera queries. Migrations controlam schema. Code First é o padrão moderno."},
- ]},
-{cat:"pg",icon:"🐘",name:"PostgreSQL",color:"#9b7ff4",group:"Banco de Dados",
- desc:"Banco relacional — queries, índices, transactions e segurança.",
- concepts:[
-  {q:"Tipos de JOIN",a:"INNER: só registros com match nos dois lados. LEFT: todos da esquerda + match direita. RIGHT: inverso. FULL OUTER: todos de ambos. CROSS: produto cartesiano."},
-  {q:"Query parametrizada",a:"<code>SELECT * FROM users WHERE id = $1</code> evita SQL Injection — banco trata parâmetros como dados, não código. NUNCA concatene input do usuário em SQL."},
-  {q:"Índices — quando criar",a:"Criar em: colunas de WHERE frequente, foreign keys, ORDER BY. Evitar em: colunas boolean (baixa cardinalidade), tabelas muito pequenas. Custo: acelera leitura, desacelera escrita."},
-  {q:"ACID",a:"Atomicity (tudo ou nada), Consistency (estado válido), Isolation (transações não se interferem), Durability (commit persiste). Base de toda transação bancária ou crítica."},
-  {q:"EXPLAIN ANALYZE",a:"Revela plano de execução real com custos e tempo. Seq Scan = lê tabela completa. Index Scan = usa índice. Bitmap Heap Scan = intermediário. Use para otimizar queries lentas."},
-  {q:"Window Functions",a:"<code>ROW_NUMBER() OVER (PARTITION BY cliente_id ORDER BY data DESC)</code> — cálculos sobre grupos sem colapsar linhas. Muito mais eficiente que subqueries correlacionadas."},
-  {q:"Subquery vs CTE vs JOIN",a:"CTE (<code>WITH nome AS (...)</code>): legível, reutilizável, otimizável. Subquery inline: simples mas menos legível. JOIN: mais eficiente para relações diretas. Evite subqueries correlacionadas em loops."},
- ]},
-{cat:"sql",icon:"SQL",name:"SQL Geral",color:"#00bcd4",group:"Banco de Dados",
- desc:"Fundamentos de SQL que valem para qualquer banco relacional.",
- concepts:[
-  {q:"DDL vs DML vs DCL",a:"DDL: CREATE, ALTER, DROP (estrutura). DML: SELECT, INSERT, UPDATE, DELETE (dados). DCL: GRANT, REVOKE (permissões). TCL: COMMIT, ROLLBACK (transações)."},
-  {q:"GROUP BY e HAVING",a:"GROUP BY agrupa linhas. HAVING filtra grupos (como WHERE mas após agregação). <code>SELECT dep, COUNT(*) FROM emp GROUP BY dep HAVING COUNT(*) > 5</code>."},
-  {q:"Normalização (1FN, 2FN, 3FN)",a:"1FN: sem grupos repetidos, valor atômico. 2FN: sem dependência parcial da PK. 3FN: sem dependência transitiva. Normalização evita redundância; desnormalização melhora performance de leitura."},
-  {q:"Índice composto",a:"Índice em múltiplas colunas: <code>CREATE INDEX ON tabela(col1, col2)</code>. Efetivo para queries que filtram por col1 ou col1+col2. Ordem importa — col1 sozinha usa o índice; col2 sozinha não."},
-  {q:"NULL e suas armadilhas",a:"NULL não é igual a nada, nem a NULL. <code>NULL = NULL</code> é NULL, não TRUE. Use <code>IS NULL</code>/<code>IS NOT NULL</code>. Funções com NULL retornam NULL — use COALESCE para substituir."},
- ]},
-{cat:"nosql",icon:"{}",name:"NoSQL",color:"#f39c12",group:"Banco de Dados",
- desc:"MongoDB, Redis e quando escolher NoSQL vs SQL.",
- concepts:[
-  {q:"Quando usar NoSQL?",a:"Dados sem esquema fixo ou que mudam frequentemente. Alta escala horizontal. Documentos hierárquicos (JSON). Chave-valor simples e rápido (Redis). Grafos (Neo4j). Não é substituto do SQL — é complementar."},
-  {q:"MongoDB — conceitos",a:"Coleções (= tabelas) com documentos BSON. Sem joins nativos — embed dados relacionados ou use $lookup. Índices como SQL. Replica sets para HA. Sharding para escala horizontal."},
-  {q:"Redis — casos de uso",a:"Cache (TTL automático), sessões, filas (Bull/BullMQ), pub/sub, rate limiting, contadores atômicos. Estruturas: strings, hashes, lists, sets, sorted sets. Persistência opcional (RDB/AOF)."},
-  {q:"CAP Theorem",a:"Impossível ter Consistency + Availability + Partition Tolerance simultaneamente. SQL prioriza C+C. Cassandra: A+P. MongoDB configurável. Escolher baseado no caso de uso."},
- ]},
-{cat:"docker",icon:"🐳",name:"Docker",color:"#1abc9c",group:"DevOps",
- desc:"Containerização, orquestração e deploy moderno.",
- concepts:[
-  {q:"Imagem vs Container",a:"Imagem: template imutável (como ISO). Container: instância em execução. <code>docker build</code> cria imagem, <code>docker run</code> cria container."},
-  {q:"Docker Compose",a:"Orquestra múltiplos containers com YAML. Define services, volumes, networks. <code>docker compose up -d</code> sobe tudo. Essencial para desenvolvimento local."},
-  {q:"Volumes vs Bind Mounts",a:"Volume: gerenciado pelo Docker, persiste dados além do container. Bind Mount: mapeia diretório do host — ideal para dev com hot reload."},
-  {q:"Multi-stage build",a:"<code>FROM node:20 AS build → RUN npm build → FROM node:20-alpine → COPY --from=build dist .</code>. Imagem final sem ferramentas de build — muito menor."},
- ]},
-{cat:"git",icon:"⑂",name:"Git",color:"#f05030",group:"DevOps",
- desc:"Controle de versão — comandos, fluxos e boas práticas.",
- concepts:[
-  {q:"Merge vs Rebase",a:"merge: commit de fusão, histórico real com ramificações. rebase: reescreve commits linearmente. Nunca rebase em branches públicos após push."},
-  {q:"git reset — modos",a:"--soft: desfaz commit, mantém staged. --mixed: desfaz commit e unstaged. --hard: apaga tudo (cuidado). Para pushed: use <code>git revert</code>."},
-  {q:"Branching strategy",a:"Git Flow: main (prod) + develop + feature/. Trunk-based: todos commitam em main com feature flags. Simples: main + feature branches com PR."},
-  {q:"Cherry-pick",a:"<code>git cherry-pick &lt;hash&gt;</code> aplica um commit específico de outro branch. Útil para hotfix: cherry-pick do fix para main e staging separadamente."},
- ]},
-{cat:"sec",icon:"🔒",name:"Segurança",color:"#e74c3c",group:"DevOps",
- desc:"OWASP Top 10, autenticação e proteções essenciais.",
- concepts:[
-  {q:"OWASP Top 10",a:"1.Broken Access Control 2.Cryptographic Failures 3.SQL/XSS Injection 4.Insecure Design 5.Security Misconfiguration 6.Vulnerable Components 7.Auth Failures 8.Integrity Failures 9.Logging Failures 10.SSRF"},
-  {q:"XSS vs CSRF",a:"XSS: injeção de JS malicioso na página. CSRF: site malicioso faz request à API usando cookies da vítima. Prevenção XSS: escape output, CSP. Prevenção CSRF: token CSRF, SameSite cookies."},
-  {q:"bcrypt vs MD5",a:"MD5/SHA são rápidos — GPU testa bilhões/segundo. bcrypt com cost 10: ~100ms por hash por design. Use sempre bcrypt (ou argon2) para senhas. Nunca MD5/SHA para senhas."},
-  {q:"HTTPS e TLS",a:"TLS criptografa tráfego — sem HTTPS, senhas e tokens transitam em texto puro. Let's Encrypt oferece certificados gratuitos. HSTS força HTTPS no browser."},
- ]},
+var TOPICS=[
+{cat:"js",icon:"JS",name:"JavaScript",color:"#f7df1e",group:"Frontend",desc:"Base de toda a web — fundamentos essenciais.",
+concepts:[
+{q:"Hoisting",a:"Declarações var/function são elevadas ao topo do escopo antes da execução. let/const ficam em temporal dead zone até a linha de declaração."},
+{q:"== vs ===",a:"=== compara valor E tipo sem coerção. == usa coerção (1 == '1' é true). Sempre use === em produção."},
+{q:"Event Loop",a:"JS é single-thread. Call Stack executa código síncrono. Callbacks async vão à Task Queue. Event Loop os move à Stack quando vazia."},
+{q:"Closure",a:"Função que acessa variáveis do escopo pai após ele encerrar. Base de encapsulamento, módulos e currying."},
+{q:"Promise e async/await",a:"Promise: 3 estados (pending, fulfilled, rejected). async/await é açúcar sintático — torna código async legível como síncrono."},
+{q:"var vs let vs const",a:"var: escopo função, hoisting. let: escopo bloco, sem hoisting visível. const: bloco, não permite reatribuição (objeto interno pode ser mutado)."},
+]},
+{cat:"ts",icon:"TS",name:"TypeScript",color:"#3178c6",group:"Frontend",desc:"Tipagem estática — erros em compilação, não em runtime.",
+concepts:[
+{q:"Por que TypeScript?",a:"Detecta erros antes de rodar. Melhora autocomplete e refactoring. Compila para JS puro — sem overhead em runtime."},
+{q:"Interface vs Type",a:"interface: forma de objetos, suporta extends e declaration merging. type: mais flexível, suporta unions, intersections e primitivos."},
+{q:"Generics",a:"Tipos parametrizados: function first<T>(arr: T[]): T. Evita duplicação mantendo type safety."},
+{q:"Optional chaining e nullish",a:"user?.address?.street retorna undefined sem erro. valor ?? 'default' usa default só se valor for null/undefined (diferente de || que considera 0 falsy)."},
+]},
+{cat:"react",icon:"⚛",name:"React",color:"#5b9cf6",group:"Frontend",desc:"Componentização, hooks e otimização de UI.",
+concepts:[
+{q:"Virtual DOM",a:"Representação em memória do DOM real. React faz diffing entre versões e aplica apenas as mudanças necessárias (reconciliation) — mais eficiente que manipulação direta."},
+{q:"useState e useEffect",a:"useState: estado local com re-render. useEffect: efeitos colaterais após render. Array vazio = só na montagem. Retorno da função = cleanup."},
+{q:"useCallback e useMemo",a:"useMemo: memoiza resultado de cálculo. useCallback: memoiza referência de função. Combinar com React.memo no filho para evitar re-renders."},
+{q:"Lifting State Up",a:"Mover state para ancestral comum quando múltiplos filhos precisam do mesmo dado. Alternativa: Context API ou Zustand para estado global."},
+]},
+{cat:"node",icon:"⬢",name:"Node.js",color:"#2ecc71",group:"Backend",desc:"Runtime JS no servidor — arquitetura e padrões.",
+concepts:[
+{q:"Non-blocking I/O",a:"Operações de I/O não bloqueiam a thread. Node processa outras requisições enquanto aguarda banco/arquivo/rede. Ideal para alta concorrência."},
+{q:"Middleware Express",a:"Função com (req, res, next). Executada em cadeia antes do handler. Uso: autenticação JWT, CORS, rate limiting, validação, logs."},
+{q:"JWT Authentication",a:"jwt.sign({id, perfil}, SECRET). Cliente envia Authorization: Bearer token. Stateless — sem sessão no servidor. Escala horizontalmente."},
+{q:"Connection Pooling",a:"Pool de conexões pré-abertas reutilizadas entre requests. Sem pool: cada request abre conexão nova (~50ms). Com pool: reutiliza instantaneamente."},
+]},
+{cat:"py",icon:"PY",name:"Python",color:"#f7c948",group:"Backend",desc:"Linguagem versátil — sintaxe, padrões e uso em IA.",
+concepts:[
+{q:"List comprehension",a:"[x*2 for x in lista if x > 0] — mais conciso e geralmente mais rápido que loop tradicional."},
+{q:"Decorators",a:"Função que envolve outra para adicionar comportamento sem modificá-la. @app.route('/'), @login_required são exemplos clássicos."},
+{q:"*args e **kwargs",a:"*args: argumentos posicionais variáveis (tuple). **kwargs: argumentos nomeados variáveis (dict). Permitem funções altamente flexíveis."},
+{q:"asyncio",a:"Event loop assíncrono para I/O bound — async/await sem overhead de threads. Ideal para APIs, scraping, websockets. FastAPI é construído sobre asyncio."},
+{q:"GIL",a:"Global Interpreter Lock — CPython permite apenas uma thread por vez. Para I/O: asyncio. Para CPU bound real: multiprocessing (processos separados)."},
+]},
+{cat:"csharp",icon:"C#",name:"C# / .NET",color:"#9b7ff4",group:"Backend",desc:"OOP, LINQ, ASP.NET Core e padrões enterprise.",
+concepts:[
+{q:"Pilares do OOP",a:"Encapsulamento: ocultar implementação. Herança: reutilizar comportamento. Polimorfismo: mesma interface, comportamentos diferentes. Abstração: modelar conceitos."},
+{q:"Interface vs Classe Abstrata",a:"Interface: contrato sem implementação, múltipla herança. Abstrata: pode ter implementação, só herança simples. Use interface para contratos."},
+{q:"LINQ",a:"Language Integrated Query — consultas tipadas: lista.Where(x => x.Ativo).OrderBy(x => x.Nome).Select(x => x.Email). Lazy evaluation."},
+{q:"Dependency Injection",a:"Padrão central do ASP.NET Core. Registrar em Services, injetar via construtor. Facilita testes (mock) e troca de implementação."},
+{q:"async/await em C#",a:"async Task<T> libera a thread durante I/O. Use em controllers ASP.NET — evita bloquear o thread pool. ConfigureAwait(false) em bibliotecas."},
+]},
+{cat:"pg",icon:"🐘",name:"PostgreSQL",color:"#6c7ae0",group:"Banco de Dados",desc:"Banco relacional — queries, índices e transactions.",
+concepts:[
+{q:"Tipos de JOIN",a:"INNER: só match nos dois lados. LEFT: todos da esquerda + match direita. RIGHT: inverso. FULL OUTER: todos de ambos. CROSS: produto cartesiano."},
+{q:"Query parametrizada",a:"SELECT * FROM users WHERE id = $1 evita SQL Injection — banco trata $1 como dado, não código. NUNCA concatene input do usuário em SQL."},
+{q:"Índices",a:"Criar em: colunas de WHERE frequente, foreign keys, ORDER BY. Custo: acelera leitura, desacelera escrita. Índice parcial para subconjunto frequente."},
+{q:"ACID",a:"Atomicity (tudo ou nada), Consistency (estado válido), Isolation (transações isoladas), Durability (commit persiste). Base de operações críticas."},
+{q:"EXPLAIN ANALYZE",a:"Mostra plano de execução real com custos e tempo. Seq Scan = varre tabela completa. Index Scan = usa índice. Use para otimizar queries lentas."},
+{q:"Window Functions",a:"ROW_NUMBER() OVER (PARTITION BY col ORDER BY data) — cálculos sobre grupos sem colapsar linhas. Muito mais eficiente que subqueries correlacionadas."},
+]},
+{cat:"sql",icon:"SQL",name:"SQL Geral",color:"#00bcd4",group:"Banco de Dados",desc:"Fundamentos SQL válidos para qualquer banco relacional.",
+concepts:[
+{q:"DDL vs DML vs DCL",a:"DDL: CREATE, ALTER, DROP (estrutura). DML: SELECT, INSERT, UPDATE, DELETE (dados). DCL: GRANT, REVOKE (permissões). TCL: COMMIT, ROLLBACK."},
+{q:"GROUP BY e HAVING",a:"GROUP BY agrupa linhas. HAVING filtra grupos após agregação (como WHERE mas para grupos). WHERE primeiro, GROUP BY, depois HAVING."},
+{q:"Normalização",a:"1FN: valor atômico, sem repetição. 2FN: sem dependência parcial da PK. 3FN: sem dependência transitiva. Normalização reduz redundância; desnormalização melhora leitura."},
+{q:"NULL e armadilhas",a:"NULL não é igual a nada, nem a outro NULL. NULL = NULL retorna NULL. Use IS NULL/IS NOT NULL. COALESCE(valor, 0) substitui NULL por 0."},
+]},
+{cat:"nosql",icon:"{}",name:"NoSQL",color:"#f39c12",group:"Banco de Dados",desc:"MongoDB, Redis e quando escolher NoSQL vs SQL.",
+concepts:[
+{q:"Quando usar NoSQL?",a:"Dados sem esquema fixo, alta escala horizontal, documentos JSON hierárquicos (MongoDB), cache/filas (Redis). Complementar ao SQL — não substituto."},
+{q:"MongoDB",a:"Documentos BSON em coleções. Sem joins — embed dados ou use $lookup. Replica sets para HA. Sharding para escala horizontal massiva."},
+{q:"Redis",a:"In-memory key-value. Casos: cache (TTL), sessões, filas (BullMQ), pub/sub, rate limiting. Estruturas: strings, hashes, lists, sets, sorted sets."},
+{q:"CAP Theorem",a:"Impossível ter Consistency + Availability + Partition Tolerance simultaneamente. PostgreSQL: C+C. Cassandra: A+P. MongoDB: configurável."},
+]},
+{cat:"docker",icon:"🐳",name:"Docker",color:"#1abc9c",group:"DevOps",desc:"Containerização, orquestração e deploy moderno.",
+concepts:[
+{q:"Imagem vs Container",a:"Imagem: template imutável (como ISO). Container: instância em execução. docker build cria imagem, docker run cria container."},
+{q:"Multi-stage build",a:"FROM node:20 AS build RUN npm build → FROM node:20-alpine COPY --from=build dist . Imagem final sem ferramentas de build — muito menor."},
+{q:"Docker Swarm",a:"Orquestrador nativo — services com replicação, balanceamento e rolling updates. Mais simples que Kubernetes, suficiente para maioria dos casos."},
+{q:"Overlay Network",a:"Rede virtual entre containers no Swarm. Containers se comunicam pelo nome do serviço (DNS interno) sem expor portas externamente."},
+]},
+{cat:"sec",icon:"🔒",name:"Segurança",color:"#e74c3c",group:"DevOps",desc:"OWASP, autenticação e proteções essenciais.",
+concepts:[
+{q:"OWASP Top 10",a:"1.Broken Access Control 2.Cryptographic Failures 3.Injection 4.Insecure Design 5.Security Misconfiguration 6.Vulnerable Components 7.Auth Failures 8.Integrity Failures 9.Logging 10.SSRF"},
+{q:"bcrypt vs MD5 para senhas",a:"MD5/SHA: GPU testa bilhões/segundo — inseguro. bcrypt cost 10: ~100ms por hash por design. Use sempre bcrypt ou argon2 para senhas. Nunca MD5/SHA."},
+{q:"CORS",a:"Navegadores bloqueiam cross-origin. origin:'*' perigoso — permite qualquer site fazer requests autenticados. Configure whitelist explícita de domínios."},
+{q:"SQL Injection",a:"Ataque que insere SQL malicioso em inputs. Prevenção: sempre use queries parametrizadas ($1, $2). NUNCA concatene strings do usuário em SQL."},
+]},
+{cat:"git",icon:"⑂",name:"Git",color:"#f05030",group:"DevOps",desc:"Controle de versão — comandos e fluxos de trabalho.",
+concepts:[
+{q:"Merge vs Rebase",a:"merge: commit de fusão, histórico real. rebase: reescreve commits linearmente — nunca em branches públicos após push."},
+{q:"git reset",a:"--soft: desfaz commit, mantém staged. --mixed: desfaz commit e unstaged. --hard: apaga tudo. Para pushed: git revert (seguro)."},
+{q:"Branching strategy",a:"Git Flow: main + develop + feature/. Trunk-based: todos em main com feature flags. Simples: main + feature branches com PR."},
+]},
+{cat:"ai",icon:"AI",name:"IA / Agentes / MCP",color:"#e91e8c",group:"IA",desc:"LLMs, agentes autônomos, MCP e uso em produção.",
+concepts:[
+{q:"O que é um LLM?",a:"Large Language Model — modelo de linguagem treinado em grandes volumes de texto. Prediz o próximo token com base no contexto. Base do ChatGPT, Claude, Gemini."},
+{q:"Prompt Engineering",a:"Arte de estruturar instruções para LLMs. Técnicas: few-shot (exemplos), chain-of-thought (pense passo a passo), role (você é um especialista em...), XML tags para estrutura."},
+{q:"O que é um agente de IA?",a:"Sistema que usa LLM como cérebro para perceber o ambiente, planejar e executar ações autonomamente (ferramentas, APIs, banco). Loop: perceber → planejar → agir → observar."},
+{q:"O que é MCP (Model Context Protocol)?",a:"Protocolo da Anthropic que permite LLMs se conectarem a ferramentas e dados externos de forma padronizada. Servidores MCP expõem tools, resources e prompts que o modelo pode usar."},
+{q:"RAG (Retrieval Augmented Generation)",a:"Técnica que recupera documentos relevantes de uma base vetorial e os injeta no contexto do LLM antes de gerar resposta — combate alucinações e mantém dados atualizados."},
+{q:"Embeddings e busca vetorial",a:"Texto convertido em vetor de alta dimensão que captura semântica. Busca por similaridade (cosine similarity) — 'cachorro' e 'cão' ficam próximos no espaço vetorial. Bases: Pinecone, pgvector, Chroma."},
+{q:"Context window e tokens",a:"Context window: quantidade máxima de tokens que o modelo processa por vez. Token ≈ 4 chars em inglês, ~3 em português. Custo e latência são proporcionais ao número de tokens."},
+{q:"Temperatura e Top-p",a:"Temperatura 0: determinístico (sempre mesma resposta). Temperatura 1: criativo/aleatório. Top-p: limita vocabulário ao núcleo de tokens mais prováveis. Para código/dados: temperatura baixa. Para criativo: alta."},
+{q:"Tool use / Function calling",a:"LLM pode chamar funções externas — define tools com nome, descrição e parâmetros. Modelo decide quando chamar, API executa, resultado volta ao modelo. Base de todos os agentes."},
+{q:"Alucinação e como mitigar",a:"LLM gera conteúdo factualmente incorreto com confiança. Mitigações: RAG (fundamentar em dados reais), temperature baixa, pedir fontes, verificar com outra chamada, system prompt restritivo."},
+]}
 ];
 
-// ============================================================
-//  QUESTÕES
-// ============================================================
-const QS = {
+var QS={
 easy:[
- {cat:"JavaScript",q:"O que é hoisting?",opts:["Técnica de compressão de código","Variáveis var/function são elevadas ao topo do escopo antes da execução","Um método de arrays","Tipo de loop especial"],ans:1,exp:"var e function sofrem hoisting. let/const têm hoisting mas ficam em temporal dead zone — acessar antes lança ReferenceError."},
- {cat:"JavaScript",q:"Qual a diferença entre == e ===?",opts:["Não há diferença","== é mais seguro","=== compara valor e tipo sem coerção","== é mais rápido"],ans:2,exp:"=== (estrito) compara valor E tipo. == usa coerção de tipo (1 == '1' é true). Sempre prefira ===."},
- {cat:"React",q:"O que são props?",opts:["Estado interno do componente","Dados passados do pai para o filho — imutáveis no filho","Variáveis globais","Métodos do ciclo de vida"],ans:1,exp:"Props são imutáveis no componente filho. Para dados internos use state (useState)."},
- {cat:"Node.js",q:"O que é middleware no Express?",opts:["Biblioteca de banco de dados","Função executada entre a requisição e a resposta com acesso a req, res e next","Um tipo de rota","Framework CSS"],ans:1,exp:"Middleware é executado em cadeia antes do handler final. Usado para autenticação, CORS, logs, validação."},
- {cat:"SQL Geral",q:"Qual comando SQL é usado para leitura de dados?",opts:["INSERT","UPDATE","SELECT","DELETE"],ans:2,exp:"SELECT é DML para leitura. Combine com WHERE, ORDER BY, LIMIT, JOIN para filtrar e organizar resultados."},
- {cat:"PostgreSQL",q:"O que é uma foreign key?",opts:["Senha do banco","Coluna que referencia a primary key de outra tabela garantindo integridade referencial","Tipo de índice","Função de agregação"],ans:1,exp:"Foreign key impede inserir valor que não exista na tabela referenciada. ON DELETE CASCADE apaga filhos automaticamente."},
- {cat:"Docker",q:"O que é um container Docker?",opts:["Um arquivo de backup","Instância em execução de uma imagem Docker","Um servidor virtual completo","Um tipo de banco de dados"],ans:1,exp:"Imagem é o template imutável. Container é a instância em execução. Um container é isolado do sistema host."},
- {cat:"Git",q:"O que faz git commit?",opts:["Envia código para o GitHub","Salva snapshot das mudanças no histórico local","Cria um novo branch","Mescla branches"],ans:1,exp:"git commit salva mudanças staged no histórico local. git push envia para o repositório remoto."},
- {cat:"Segurança",q:"Por que nunca armazenar senha em texto puro?",opts:["Ocupa muito espaço","Qualquer acesso ao banco expõe todas as senhas diretamente","É muito lento","Não é compatível com SQL"],ans:1,exp:"Use bcrypt/argon2 — mesmo com acesso ao banco, o atacante não consegue as senhas originais. MD5/SHA são inseguros para senhas."},
- {cat:"Python",q:"O que é list comprehension?",opts:["Método de documentação","Sintaxe concisa para criar listas: [x*2 for x in lista if condição]","Tipo de classe especial","Forma de importar módulos"],ans:1,exp:"Mais conciso e geralmente mais rápido que loop tradicional. Retorna uma nova lista."},
- {cat:"C# / .NET",q:"O que é herança em OOP?",opts:["Cópia de código entre arquivos","Mecanismo onde uma classe deriva de outra reutilizando e estendendo comportamento","Tipo de interface","Método de compressão"],ans:1,exp:"Herança é um dos 4 pilares do OOP. Em C#: class Cachorro : Animal. A classe filha herda membros públicos e protegidos."},
- {cat:"NoSQL",q:"Para que serve o Redis?",opts:["Banco de dados principal relacional","Cache em memória, sessões, filas e pub/sub — muito rápido com dados em RAM","Editor de código","Framework web"],ans:1,exp:"Redis é in-memory — acesso em microssegundos. Usado para cache (TTL), rate limiting, filas (Bull), sessões."},
- {cat:"SQL Geral",q:"O que é NULL no SQL?",opts:["Zero","Texto vazio","Ausência de valor — não é igual a nada, nem a outro NULL","Falso booleano"],ans:2,exp:"NULL = NULL retorna NULL (não TRUE). Use IS NULL/IS NOT NULL. Funções com NULL geralmente retornam NULL — use COALESCE."},
- {cat:"Git",q:"O que é um branch?",opts:["Cópia completa do repositório","Linha de desenvolvimento paralela e independente do código","Um tipo de commit","Uma tag de versão"],ans:1,exp:"Branch é um ponteiro para um commit. Permite desenvolvimento isolado. Custo quase zero no Git — diferente de SVN."},
- {cat:"Docker",q:"O que é docker-compose?",opts:["Editor de Dockerfile","Ferramenta para gerenciar múltiplos containers com arquivo YAML","Repositório de imagens","Linguagem de scripts"],ans:1,exp:"docker-compose.yml define services, volumes e networks. docker compose up -d sobe tudo de uma vez."},
+{cat:"JavaScript",q:"O que é hoisting?",opts:["Técnica de compressão","Variáveis var/function são elevadas ao topo do escopo antes da execução","Método de arrays","Tipo de loop"],ans:1,exp:"var e function sofrem hoisting. let/const ficam em temporal dead zone — acessar antes lança ReferenceError."},
+{cat:"JavaScript",q:"Qual a diferença entre == e ===?",opts:["Não há diferença","== é mais seguro","=== compara valor e tipo sem coerção","== é mais rápido"],ans:2,exp:"=== (estrito) compara valor E tipo. == usa coerção (1 == '1' é true). Sempre prefira ===."},
+{cat:"React",q:"O que são props?",opts:["Estado interno do componente","Dados passados do pai para o filho — imutáveis no filho","Variáveis globais","Métodos de ciclo de vida"],ans:1,exp:"Props são imutáveis no componente filho. Para dados internos use state (useState)."},
+{cat:"Node.js",q:"O que é middleware no Express?",opts:["Biblioteca de banco","Função executada entre requisição e resposta com acesso a req, res e next","Tipo de rota","Framework CSS"],ans:1,exp:"Middleware executado em cadeia antes do handler final. Usado para auth, CORS, logs, validação."},
+{cat:"SQL Geral",q:"Qual comando SQL é usado para leitura de dados?",opts:["INSERT","UPDATE","SELECT","DELETE"],ans:2,exp:"SELECT é DML para leitura. Combine com WHERE, ORDER BY, LIMIT, JOIN para filtrar e organizar."},
+{cat:"PostgreSQL",q:"O que é uma foreign key?",opts:["Senha do banco","Coluna que referencia a primary key de outra tabela","Tipo de índice","Função de agregação"],ans:1,exp:"Garante integridade referencial — não permite inserir valor que não exista na tabela referenciada."},
+{cat:"Docker",q:"O que é um container Docker?",opts:["Arquivo de backup","Instância em execução de uma imagem Docker","Servidor virtual completo","Tipo de banco"],ans:1,exp:"Imagem é o template imutável. Container é a instância em execução, isolada do sistema host."},
+{cat:"Segurança",q:"Por que nunca armazenar senha em texto puro?",opts:["Ocupa muito espaço","Qualquer acesso ao banco expõe todas as senhas","É muito lento","Não é compatível com SQL"],ans:1,exp:"Use bcrypt/argon2. Mesmo com acesso ao banco, atacante não consegue as senhas originais."},
+{cat:"Python",q:"O que é list comprehension?",opts:["Documentação de lista","Sintaxe concisa para criar listas: [x*2 for x in lista if cond]","Tipo de classe","Forma de importar módulos"],ans:1,exp:"Mais conciso e geralmente mais rápido que loop tradicional. Retorna nova lista."},
+{cat:"C# / .NET",q:"O que é herança?",opts:["Cópia de código entre arquivos","Classe derivada de outra reutilizando e estendendo comportamento","Tipo de interface","Método de compressão"],ans:1,exp:"Um dos 4 pilares do OOP. Em C#: class Cachorro : Animal. Filho herda membros públicos e protegidos."},
+{cat:"NoSQL",q:"Para que serve o Redis?",opts:["Banco relacional principal","Cache em memória, sessões, filas, pub/sub — acesso em microssegundos","Editor de código","Framework web"],ans:1,exp:"Redis é in-memory. Usado para cache (TTL), rate limiting, filas (Bull), sessões, contadores atômicos."},
+{cat:"Git",q:"O que faz git commit?",opts:["Envia código para o GitHub","Salva snapshot das mudanças no histórico local","Cria branch","Faz merge"],ans:1,exp:"git commit salva mudanças staged no histórico local. git push envia para o repositório remoto."},
+{cat:"IA / Agentes / MCP",q:"O que é um LLM?",opts:["Linguagem de markup","Modelo de linguagem treinado em grandes volumes de texto que prediz o próximo token","Banco de dados de linguagem","Framework de machine learning"],ans:1,exp:"Large Language Model. Base do ChatGPT, Claude, Gemini. Prediz o próximo token com base no contexto acumulado."},
+{cat:"IA / Agentes / MCP",q:"O que é temperatura em LLMs?",opts:["Temperatura do servidor","Parâmetro que controla aleatoriedade: 0 = determinístico, 1 = criativo/aleatório","Velocidade de resposta","Tamanho do modelo"],ans:1,exp:"Temperatura 0: sempre mesma resposta (bom para código/dados). Alta: respostas variadas e criativas (bom para texto/brainstorming)."},
+{cat:"SQL Geral",q:"O que é NULL no SQL?",opts:["Zero","Texto vazio","Ausência de valor — não é igual a nada, nem a outro NULL","Falso booleano"],ans:2,exp:"NULL = NULL retorna NULL, não TRUE. Use IS NULL/IS NOT NULL. COALESCE(valor, 0) substitui NULL."},
 ],
 mid:[
- {cat:"JavaScript",q:"O que é o Event Loop e por que permite código assíncrono em JS single-thread?",opts:["É um loop for especial","Call Stack + Task Queue — Event Loop move callbacks à Stack quando ela está vazia, sem bloquear a thread","Um método de arrays","Parte do DOM"],ans:1,exp:"JS é single-thread mas não bloqueante. I/O assíncrono vai para APIs externas; callbacks voltam via Task Queue quando a Stack está vazia."},
- {cat:"JavaScript",q:"Qual a diferença entre Promise e async/await?",opts:["São completamente diferentes","async/await é açúcar sintático sobre Promises — mesma funcionalidade, sintaxe mais legível","async/await é mais rápido","Promises são deprecated"],ans:1,exp:"async/await usa Promises internamente. await pausa a função async até a Promise resolver — sem .then()/.catch() encadeados."},
- {cat:"React",q:"Quando usar useCallback?",opts:["Para fazer fetch HTTP","Para memoizar referência de função evitando re-criação a cada render — combinar com React.memo no filho","Para substituir useState","Para buscar dados externos"],ans:1,exp:"Sem useCallback, a função é recriada a cada render e o filho com React.memo re-renderiza mesmo sem mudança real."},
- {cat:"Node.js",q:"O que é connection pooling e por que é essencial?",opts:["Cache de queries SQL","Pool de conexões pré-abertas ao banco reutilizadas entre requests — abrir conexão custa ~50ms","Tipo de autenticação","Balanceador de carga"],ans:1,exp:"Sem pool: 100 requests simultâneas = 100 novas conexões ao banco. Pool: 20 conexões compartilhadas. PostgreSQL tem limite de conexões."},
- {cat:"PostgreSQL",q:"O que é EXPLAIN ANALYZE e para que serve?",opts:["Documenta a estrutura da tabela","Executa e mostra o plano real com custos, loops e tempo — essencial para otimizar queries lentas","Cria índices automaticamente","Valida sintaxe SQL"],ans:1,exp:"Seq Scan = varre tabela completa (ruim em tabelas grandes). Index Scan = usa índice. Use para identificar gargalos antes de criar índices."},
- {cat:"SQL Geral",q:"Qual a diferença entre WHERE e HAVING?",opts:["São sinônimos","WHERE filtra linhas antes do GROUP BY; HAVING filtra grupos após a agregação","HAVING é mais rápido","WHERE não funciona com JOINs"],ans:1,exp:"SELECT dep, COUNT(*) FROM emp WHERE ativo=true GROUP BY dep HAVING COUNT(*) > 5. WHERE primeiro, HAVING depois."},
- {cat:"Python",q:"O que é um decorator em Python?",opts:["Tipo de variável","Função que envolve outra para adicionar comportamento sem modificá-la — sintaxe @decorator","Método de classe especial","Tipo de loop"],ans:1,exp:"Flask usa @app.route('/'), Django usa @login_required. Implementado com funções de ordem superior — recebe função, retorna função modificada."},
- {cat:"C# / .NET",q:"O que é Dependency Injection no ASP.NET Core?",opts:["Biblioteca externa obrigatória","Padrão onde dependências são fornecidas pelo container — registradas em Services, injetadas via construtor","Método de conexão ao banco","Tipo de herança"],ans:1,exp:"builder.Services.AddScoped<IRepo, Repo>() registra. Controller recebe via construtor. Facilita testes (mock) e substituição de implementação."},
- {cat:"NoSQL",q:"Quando preferir MongoDB ao invés de PostgreSQL?",opts:["Sempre que possível","Dados com esquema variável/hierárquico, escalabilidade horizontal massiva, documentos JSON naturais sem joins complexos","Nunca — SQL é sempre superior","Apenas para logs"],ans:1,exp:"MongoDB brilha em: catálogos com atributos variáveis, dados de sensores/logs, conteúdo CMS. Para relações complexas e transações, PostgreSQL é melhor."},
- {cat:"Segurança",q:"O que é CORS e por que origin:'*' é perigoso em produção?",opts:["Não tem impacto na segurança","Navegadores bloqueiam cross-origin por padrão. origin:'*' permite qualquer site fazer requests autenticados à sua API usando cookies da vítima","CORS é apenas para imagens","origin:'*' é obrigatório"],ans:1,exp:"Com credentials+origin:*, um site malicioso pode chamar sua API usando a sessão do usuário logado. Configure whitelist explícita de domínios."},
- {cat:"Git",q:"Qual a diferença entre git merge e git rebase?",opts:["São idênticos","merge: commit de fusão com histórico completo; rebase: reescreve commits linearmente — nunca rebase em branches públicos após push","rebase é sempre preferível","merge é deprecated"],ans:1,exp:"merge preserva histórico real. rebase: histórico linear e limpo mas reescrito — force push necessário, problemático para outros devs."},
- {cat:"Docker",q:"O que é multi-stage build?",opts:["Build em múltiplos servidores","Dockerfile com múltiplos FROM — build em imagem completa, copia só o artefato final para imagem leve","Tipo de Dockerfile inválido","Build paralelo de containers"],ans:1,exp:"FROM node:20 AS build RUN npm build → FROM node:20-alpine COPY --from=build dist . → imagem final sem node_modules e ferramentas de build."},
- {cat:"SQL Geral",q:"O que são Window Functions?",opts:["Funções de interface gráfica","Funções de agregação que operam sobre um conjunto de linhas sem colapsá-las — ROW_NUMBER, RANK, LAG, LEAD","Tipo de índice especial","Funções de string"],ans:1,exp:"ROW_NUMBER() OVER (PARTITION BY cliente ORDER BY data DESC) — numera linhas por grupo sem colapsar. Muito mais eficiente que subqueries."},
- {cat:"TypeScript",q:"O que são generics e por que usar?",opts:["Tipos opcionais","Tipos parametrizados que permitem criar funções/classes reutilizáveis mantendo type safety sem duplicar código","Tipos de erro","Classe abstrata"],ans:1,exp:"function first<T>(arr: T[]): T — funciona com qualquer tipo mantendo segurança. Sem generics: any (perde type safety) ou duplicar código para cada tipo."},
- {cat:"Python",q:"O que é o GIL e como contornar para paralelismo real?",opts:["Biblioteca de gráficos","Global Interpreter Lock — CPython permite apenas uma thread por vez. Para I/O: asyncio. Para CPU: multiprocessing","Uma função especial","Tipo de decorator"],ans:1,exp:"GIL é uma limitação do CPython para simplificar gerenciamento de memória. asyncio resolve I/O bound. multiprocessing (processos separados) resolve CPU bound."},
- {cat:"C# / .NET",q:"O que é LINQ e como funciona?",opts:["Framework CSS","Language Integrated Query — consultas tipadas em coleções com lazy evaluation: .Where().OrderBy().Select()","Biblioteca de rede","Tipo de classe"],ans:1,exp:"Lazy evaluation: query só executa ao iterar (foreach, .ToList()). Suporte a SQL, XML, arrays, coleções. Fortemente tipado — erros em compilação."},
- {cat:"NoSQL",q:"O que é o teorema CAP?",opts:["Modelo de segurança","Impossível ter Consistency + Availability + Partition Tolerance simultaneamente — sistemas distribuídos escolhem 2","Padrão de API","Modelo de normalização"],ans:1,exp:"PostgreSQL: C+C. Cassandra: A+P (eventualmente consistente). MongoDB configurável. Entender CAP é crucial para escolher o banco certo."},
- {cat:"PostgreSQL",q:"O que é índice parcial (partial index)?",opts:["Índice em metade das colunas","Índice em subconjunto de linhas — menor e mais rápido quando só parte dos dados é consultada frequentemente","Tipo de índice hash","Índice temporário"],ans:1,exp:"CREATE INDEX ON pedidos(cliente_id) WHERE status='pendente' — se 95% são finalizados, o índice parcial é muito menor e mais rápido para a query comum."},
- {cat:"Segurança",q:"O que é SQL Injection e como prevenir?",opts:["Tipo de JOIN","Ataque que insere SQL malicioso em inputs. Prevenção: queries parametrizadas — NUNCA concatenar strings do usuário","Erro de sintaxe SQL","Tipo de backup"],ans:1,exp:"SELECT * FROM users WHERE email='"+String.fromCharCode(39)+"; DROP TABLE users; --' executa dois comandos. Query parametrizada ($1) trata o input como dado, não código."},
- {cat:"React",q:"O que é o Virtual DOM e por que React o usa?",opts:["Uma biblioteca separada","Representação em memória do DOM real — React faz diffing e aplica apenas mudanças necessárias, evitando operações DOM caras","Um banco de dados em memória","Substituto do JavaScript"],ans:1,exp:"Manipulação direta do DOM é cara. React mantém Virtual DOM, faz diffing (reconciliation) e aplica patches mínimos no DOM real."},
- {cat:"JavaScript",q:"O que é closure e qual problema resolve?",opts:["Método para fechar conexões","Função que acessa variáveis do escopo pai após ele encerrar — permite encapsulamento e estado privado","Tipo de Promise","Evento do navegador"],ans:1,exp:"Closures permitem criar estado privado sem classes: const counter = (() => { let n=0; return () => ++n })() — n não é acessível externamente."},
+{cat:"JavaScript",q:"O que é o Event Loop e por que permite código assíncrono em JS single-thread?",opts:["Loop for especial","Call Stack + Task Queue — Event Loop move callbacks à Stack quando ela está vazia","Método de arrays","Parte do DOM"],ans:1,exp:"JS não bloqueia porque I/O vai para APIs externas; callbacks voltam via Task Queue quando Stack está vazia."},
+{cat:"JavaScript",q:"O que é closure e qual problema resolve?",opts:["Fechar conexões","Função que acessa variáveis do escopo pai após ele encerrar — permite encapsulamento e estado privado","Tipo de Promise","Evento do browser"],ans:1,exp:"Closures permitem estado privado sem classes. Counter com variável interna inacessível externamente é o exemplo clássico."},
+{cat:"React",q:"Quando usar useCallback?",opts:["Para fetch HTTP","Para memoizar referência de função evitando re-criação a cada render — combinar com React.memo no filho","Substituir useState","Buscar dados externos"],ans:1,exp:"Sem useCallback, a função é recriada a cada render e filho com React.memo re-renderiza mesmo sem mudança."},
+{cat:"Node.js",q:"O que é connection pooling e por que é essencial?",opts:["Cache de queries","Pool de conexões pré-abertas reutilizadas — abrir conexão custa ~50ms","Tipo de autenticação","Load balancer"],ans:1,exp:"100 requests simultâneas sem pool = 100 novas conexões ao banco. Com pool de 20: compartilhadas e reutilizadas."},
+{cat:"PostgreSQL",q:"O que é EXPLAIN ANALYZE?",opts:["Documenta tabela","Executa e mostra o plano real com custos e tempo — essencial para otimizar queries lentas","Cria índices auto","Valida sintaxe"],ans:1,exp:"Seq Scan = varre tabela. Index Scan = usa índice. Bitmap Heap Scan = intermediário. Use para gargalos em produção."},
+{cat:"SQL Geral",q:"Qual a diferença entre WHERE e HAVING?",opts:["São sinônimos","WHERE filtra linhas antes do GROUP BY; HAVING filtra grupos após agregação","HAVING é mais rápido","WHERE não funciona com JOINs"],ans:1,exp:"SELECT dep, COUNT(*) FROM emp WHERE ativo=1 GROUP BY dep HAVING COUNT(*) > 5. WHERE primeiro, HAVING depois."},
+{cat:"Python",q:"O que é um decorator?",opts:["Tipo de variável","Função que envolve outra para adicionar comportamento sem modificá-la — sintaxe @decorator","Método de classe","Tipo de loop"],ans:1,exp:"Flask usa @app.route('/'), Django usa @login_required. Recebe função e retorna função modificada."},
+{cat:"C# / .NET",q:"O que é Dependency Injection no ASP.NET Core?",opts:["Biblioteca externa","Dependências fornecidas pelo container — registradas em Services, injetadas via construtor","Conexão ao banco","Tipo de herança"],ans:1,exp:"builder.Services.AddScoped<IRepo, Repo>(). Controller recebe via construtor. Facilita testes com mock."},
+{cat:"NoSQL",q:"Quando preferir MongoDB ao PostgreSQL?",opts:["Sempre","Dados com esquema variável, hierárquico ou JSON natural sem joins complexos","Nunca","Apenas para logs"],ans:1,exp:"MongoDB brilha em: catálogos com atributos variáveis, dados de sensores, CMS. Para relações complexas e transações: PostgreSQL."},
+{cat:"Segurança",q:"O que é CORS e por que origin:'*' é perigoso?",opts:["Sem impacto","Navegadores bloqueiam cross-origin. origin:'*' permite qualquer site fazer requests autenticados à sua API","Só para imagens","origin:'*' é obrigatório"],ans:1,exp:"Com credentials+origin:*, site malicioso chama sua API usando sessão do usuário logado. Use whitelist explícita."},
+{cat:"Git",q:"Qual a diferença entre git merge e git rebase?",opts:["São idênticos","merge: commit de fusão com histórico completo; rebase: reescreve commits linearmente","rebase é sempre melhor","merge é deprecated"],ans:1,exp:"merge preserva histórico real. rebase: linear e limpo mas reescrito — force push necessário, problemático para outros."},
+{cat:"Docker",q:"O que é multi-stage build?",opts:["Build em múltiplos servidores","Múltiplos FROM — build em imagem completa, copia só artefato para imagem leve","Dockerfile inválido","Build paralelo"],ans:1,exp:"FROM node:20 AS build RUN npm build → FROM node:20-alpine COPY --from=build dist . Sem node_modules na imagem final."},
+{cat:"TypeScript",q:"O que são generics?",opts:["Tipos opcionais","Tipos parametrizados que permitem funções reutilizáveis mantendo type safety","Tipos de erro","Classe abstrata"],ans:1,exp:"function first<T>(arr: T[]): T — funciona com qualquer tipo sem duplicar código. Sem generics: any (perde segurança)."},
+{cat:"IA / Agentes / MCP",q:"O que é RAG (Retrieval Augmented Generation)?",opts:["Tipo de modelo de IA","Técnica que recupera documentos relevantes e os injeta no contexto do LLM — reduz alucinações e mantém dados atualizados","Framework de machine learning","Tipo de fine-tuning"],ans:1,exp:"Busca vetorial encontra documentos relevantes → injeta no prompt → LLM responde com base em dados reais. Combate alucinações sem re-treinar o modelo."},
+{cat:"IA / Agentes / MCP",q:"O que é um agente de IA?",opts:["Chatbot simples","Sistema que usa LLM para perceber o ambiente, planejar e executar ações autonomamente usando ferramentas","Modelo de ML para classificação","API de IA"],ans:1,exp:"Loop: perceber → planejar → agir → observar. O LLM é o cérebro que decide quais ferramentas/APIs chamar para atingir o objetivo."},
+{cat:"IA / Agentes / MCP",q:"O que é o MCP (Model Context Protocol)?",opts:["Protocolo de rede HTTP","Protocolo da Anthropic que permite LLMs conectarem a ferramentas e dados externos de forma padronizada via servidores MCP","Método de compressão de modelos","Tipo de fine-tuning"],ans:1,exp:"Servidores MCP expõem tools, resources e prompts. Claude Code, cursor e outros clientes usam MCP para se conectar a GitHub, Slack, bancos de dados, etc."},
+{cat:"IA / Agentes / MCP",q:"O que são embeddings vetoriais?",opts:["Tipo de banco de dados","Representação de texto como vetor numérico que captura semântica — textos similares ficam próximos no espaço vetorial","Compressão de modelos","Tipo de tokenização"],ans:1,exp:"'cachorro' e 'cão' ficam próximos no espaço vetorial. Base do RAG e busca semântica. Bancos vetoriais: Pinecone, pgvector, Chroma, Weaviate."},
+{cat:"SQL Geral",q:"O que são Window Functions?",opts:["Funções de interface","Funções de agregação que operam sobre grupos sem colapsar linhas — ROW_NUMBER, RANK, LAG, LEAD","Tipo de índice","Funções de string"],ans:1,exp:"ROW_NUMBER() OVER (PARTITION BY cliente ORDER BY data DESC). Muito mais eficiente que subqueries correlacionadas para cálculos por grupo."},
+{cat:"Python",q:"O que é o GIL e como contornar?",opts:["Biblioteca gráfica","Global Interpreter Lock — CPython permite uma thread por vez. I/O: asyncio. CPU bound: multiprocessing","Função especial","Tipo de decorator"],ans:1,exp:"GIL simplifica gerenciamento de memória do CPython mas limita threads. asyncio resolve I/O. multiprocessing cria processos separados para CPU."},
+{cat:"NoSQL",q:"O que é o CAP Theorem?",opts:["Modelo de segurança","Impossível ter Consistency + Availability + Partition Tolerance simultaneamente em sistemas distribuídos","Padrão de API","Normalização"],ans:1,exp:"PostgreSQL: C+C. Cassandra: A+P (eventual consistency). MongoDB: configurável. Entender CAP é crucial para escolher o banco certo."},
 ],
 hard:[
- {cat:"JavaScript",q:"Como implementar debounce para otimizar busca em tempo real?",opts:["Usar setTimeout sem cancelar","clearTimeout na chamada anterior + setTimeout — delay execução até usuário parar de digitar, evitando requests a cada keystroke","Usar Promise.all","Usar Web Workers"],ans:1,exp:"const debounce = (fn, ms) => { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms) }}. Reduz de 1 request/keystroke para 1 request após parar."},
- {cat:"Node.js",q:"Como implementar circuit breaker em chamadas a APIs externas?",opts:["Try/catch simples com retry infinito","Monitora falhas e 'abre' o circuito após threshold — rejeita imediatamente durante período de cooldown, evita cascata de falhas","Aumentar timeout","Usar mais threads"],ans:1,exp:"Estados: Closed (normal) → Open (falhou N vezes, rejeita sem tentar) → Half-Open (testa se voltou). Evita que falha de dependência derrubar o sistema inteiro. Lib: opossum."},
- {cat:"PostgreSQL",q:"O que é table partitioning e quando aplicar?",opts:["Dividir banco em servidores","Dividir tabela grande em partições físicas por critério (range de data, hash) — queries no período atual só leem a partição relevante","Tipo de índice","Replicação de dados"],ans:1,exp:"Tabela de logs/km com anos de dados: partição por mês. SELECT do mês atual não varre histórico completo. Maintenance (VACUUM, índices) por partição. Partition pruning automático."},
- {cat:"Segurança",q:"O que é SSRF e como mitigar?",opts:["Tipo de XSS","Atacante faz servidor realizar requests para endereços internos não acessíveis externamente. Mitigação: whitelist de domínios, rejeitar IPs privados (10.x, 192.168.x, 172.16-31.x)","Tipo de SQL Injection","Ataque de força bruta"],ans:1,exp:"Ex: endpoint de geocode que aceita URL arbitrária pode ser manipulado para acessar http://169.254.169.254 (metadata AWS) ou serviços internos. Validar e sanitizar todas as URLs de destino."},
- {cat:"C# / .NET",q:"O que é o padrão Repository e Unit of Work?",opts:["Dois patterns não relacionados","Repository: abstrai acesso ao banco (IRepository<T>). Unit of Work: agrupa múltiplas operações em uma transação. Facilita testes e troca de ORM","Tipo de herança","Padrão de autenticação"],ans:1,exp:"Repository: SRP, testável (mock). UoW: contexto compartilhado garantindo que múltiplas operações sejam commitadas ou revertidas juntas. EF Core já implementa ambos via DbContext."},
- {cat:"Python",q:"O que é asyncio e quando usar?",opts:["Biblioteca de threads","Event loop assíncrono para I/O bound — async/await sem GIL overhead. Ideal para: APIs, scraping, websockets. Não resolve CPU bound (use multiprocessing)","Tipo de decorator","Framework web"],ans:1,exp:"async def main(): async with aiohttp.ClientSession() as s: r = await s.get(url). Milhares de requests paralelas sem criar threads. FastAPI é construído sobre asyncio."},
- {cat:"NoSQL",q:"Como implementar fila resiliente de mensagens com Redis (BullMQ)?",opts:["setTimeout no servidor","BullMQ com Redis: producer adiciona Job na fila, workers consomem com retry automático, dead letter queue para falhas persistentes, dashboard de monitoramento","Polling no banco a cada segundo","Websockets diretos"],ans:1,exp:"Vantagens: retry com backoff exponencial, concorrência controlada, prioridade, delay, cron. Dead letter queue para jobs que falharam N vezes. Sem Redis: memória (perde em restart) ou polling pesado no banco."},
- {cat:"React",q:"O que é code splitting com React.lazy e por que usar?",opts:["Dividir CSS em arquivos","React.lazy(() => import('./Comp')) carrega o chunk JS apenas quando o componente é renderizado — bundle inicial menor, carregamento sob demanda","Substituir webpack","Tipo de memoização"],ans:1,exp:"Sem code splitting: todo o JS em um bundle enorme. Com lazy: Dashboard.chunk.js só é baixado quando usuário navega para o Dashboard. Vite cria chunks automaticamente em dynamic imports."},
- {cat:"PostgreSQL",q:"Como resolver o problema N+1 queries?",opts:["Cache no frontend","N+1: 1 query para lista + N queries para detalhes de cada item. Solução: JOIN ou DataLoader — 2 queries totais independente do tamanho da lista","Paginação","Índices adicionais"],ans:1,exp:"Errado: SELECT clientes → loop → SELECT veiculos WHERE cliente_id=$1 (N queries). Certo: SELECT c.*, v.* FROM clientes c JOIN veiculos v ON v.cliente_id=c.id (1 query). DataLoader batcha IDs em SELECT WHERE id IN ($1,$2...)."},
- {cat:"SQL Geral",q:"O que é normalização vs desnormalização e quando desnormalizar?",opts:["Normalização é sempre errada","Normalização: elimina redundância (3FN). Desnormalização: adiciona redundância para performance de leitura. Desnormalizar quando: queries analíticas lentas, data warehouses, reads >> writes","São sinônimos","Apenas para NoSQL"],ans:1,exp:"OLTP: normalizado (evita anomalias de update). OLAP/DW: desnormalizado (estrela, floco de neve) — leitura rápida é prioridade, redundância é aceitável. Views e índices são a solução intermediária."},
- {cat:"JavaScript",q:"O que é WeakMap e quando usar ao invés de Map?",opts:["Versão mais rápida de Map","WeakMap: keys são fracamente referenciadas — permite GC coletar o objeto se não houver outra referência. Ideal para metadados privados associados a objetos sem impedir garbage collection","São idênticos","WeakMap é deprecated"],ans:1,exp:"const private = new WeakMap(). class C { constructor() { private.set(this, {secret:42}) } }. Quando C é coletado pelo GC, a entrada no WeakMap some automaticamente. Map manteria a referência viva."},
- {cat:"Python",q:"Como implementar cache com Redis no Python para otimizar APIs?",opts:["Salvar em arquivo","@cache decorator com Redis: serializar resultado (pickle/JSON), TTL configurável, cache-aside pattern — busca no Redis antes do banco","Salvar em variável global","Usar SQLite"],ans:1,exp:"def get_user(id): key=f'user:{id}'; cached=redis.get(key); if cached: return json.loads(cached); user=db.query(id); redis.setex(key, 300, json.dumps(user)); return user. Cache-aside é o padrão mais flexível."},
- {cat:"Segurança",q:"O que é timing attack e como implementar comparação segura?",opts:["Ataque de performance","Ataque que mede tempo de resposta para inferir dados — comparação com === para no primeiro caractere diferente, vazando informação. Use crypto.timingSafeEqual (Node) ou hmac.compare_digest (Python)","Tipo de DoS","Ataque de SQL"],ans:1,exp:"'abc' === 'xyz' termina no 1° char diferente — 'abc' === 'abd' é 3x mais lento. Atacante mede tempo para adivinhar o token. timingSafeEqual: mesmo tempo independente de onde diverge."},
- {cat:"C# / .NET",q:"O que é middleware pipeline no ASP.NET Core e como a ordem importa?",opts:["Configuração do banco","Cadeia de middlewares executados em ordem — request passa por todos antes do handler. Ordem é crítica: CORS antes de Auth, Auth antes de endpoint. app.Use vs app.Run","Tipo de controller","Filtro de erros"],ans:1,exp:"app.UseHttpsRedirection() → app.UseCors() → app.UseAuthentication() → app.UseAuthorization() → app.MapControllers(). Inverter Auth antes de CORS quebra preflight. Use retorna ao pipeline, Run encerra."},
- {cat:"Docker",q:"O que são redes overlay no Docker Swarm e como afetam segurança?",opts:["Redes físicas do servidor","Redes virtuais criptografadas entre nodes do Swarm — containers da mesma overlay se comunicam livremente por nome. Segmentar por função (app, db) limita blast radius","Substituto do firewall","Tipo de volume"],ans:1,exp:"Containers na mesma overlay se acessam diretamente — db na mesma rede que app é conveniente mas se app for comprometido, db está exposto. Redes separadas + política de acesso explícita é mais seguro."},
- {cat:"Git",q:"O que é git bisect e como usar para encontrar bugs?",opts:["Bisect é um alias de merge","Busca binária no histórico — marca commit bom e ruim, git divide ao meio, você testa e marca, repete até encontrar o commit exato que introduziu o bug","Tipo de rebase","Ferramenta de merge visual"],ans:1,exp:"git bisect start → git bisect bad HEAD → git bisect good v1.0 → git checkout <meio> → testa → git bisect good/bad → repete. Em 30 commits: encontra em ~5 iterações (log2(30))."},
- {cat:"Node.js",q:"Como implementar rate limiting distribuído com Redis em múltiplas réplicas?",opts:["Rate limit apenas no nginx","Rate limit in-memory não funciona com múltiplas réplicas (cada processo tem contador próprio). Redis centralizado: INCR + EXPIRE por chave IP — contador compartilhado entre todos os processos","Usar PM2 cluster","Desativar rate limit em prod"],ans:1,exp:"SET key 1 EX 60 NX → INCR key → se valor > limite: retorna 429. Redis INCR é atômico — sem race condition. Libs: rate-limiter-flexible, express-rate-limit com RedisStore."},
- {cat:"SQL Geral",q:"O que é uma CTE recursiva e quando usar?",opts:["CTE com erro de sintaxe","WITH RECURSIVE para consultar dados hierárquicos (árvores, categorias aninhadas, organogramas) sem múltiplos self-joins","Tipo de subquery simples","CTE que se repete automaticamente"],ans:1,exp:"WITH RECURSIVE cat AS (SELECT id, nome, parent FROM categorias WHERE parent IS NULL UNION ALL SELECT c.id, c.nome, c.parent FROM categorias c JOIN cat ON c.parent=cat.id) SELECT * FROM cat. Substitui recursão em código de aplicação."},
- {cat:"NoSQL",q:"O que é eventual consistency e como lidar na aplicação?",opts:["Consistência total garantida","Em sistemas distribuídos, após write, réplicas ficam consistentes eventualmente (não imediatamente). Lidar: read-your-writes (ler do primário), operações idempotentes, UI otimista","Bug do banco de dados","Apenas teórico"],ans:1,exp:"Cassandra/DynamoDB: write replica A → usuário lê replica B antes de sincronizar → dado antigo. Mitigações: read com quorum, session consistency, tokens de versão (vector clocks), UI otimista com rollback se conflito."},
- {cat:"Python",q:"O que é Pydantic e por que usar com FastAPI?",opts:["Framework de testes","Validação e serialização de dados com type hints — FastAPI usa para validar request body, query params e response, gerando documentação OpenAPI automática","ORM para banco","Biblioteca de ML"],ans:1,exp:"class UserCreate(BaseModel): nome: str; email: EmailStr; idade: int. FastAPI valida automaticamente, retorna 422 se inválido, serializa response. Pydantic v2 é 5-50x mais rápido que v1 (Rust core)."},
- {cat:"React",q:"O que é Concurrent Mode e como startTransition ajuda UX?",opts:["Modo de desenvolvimento","React pode pausar renders lentos para priorizar interações urgentes. startTransition marca updates não-urgentes (filtros, buscas) — UI não trava durante processamento","Framework separado","Substitui Redux"],ans:1,exp:"const [isPending, startTransition] = useTransition(). startTransition(() => setSearch(value)) — atualização de search é não-urgente. Se usuário clicar em algo urgente, React pausa o filtro. Sensação de responsividade mesmo com listas grandes."},
- {cat:"C# / .NET",q:"O que é o padrão CQRS e quando aplicar?",opts:["Tipo de banco de dados","Command Query Responsibility Segregation — separa operações de escrita (Commands) de leitura (Queries) em modelos distintos. Útil quando reads e writes têm requisitos muito diferentes","Design pattern de UI","Tipo de autenticação"],ans:1,exp:"Reads: modelo denormalizado, cache, read replicas — otimizado para performance. Writes: modelo normalizado, validações, eventos. Complexidade extra — só aplique quando o domínio justificar. Combina bem com Event Sourcing."},
-],
+{cat:"JavaScript",q:"Como implementar debounce para busca em tempo real?",opts:["setTimeout sem cancelar","clearTimeout na chamada anterior + setTimeout — executa só após usuário parar de digitar, evitando request a cada keystroke","Promise.all","Web Workers"],ans:1,exp:"const debounce = (fn, ms) => { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms) }}. Reduz de N requests/keystroke para 1."},
+{cat:"Node.js",q:"Como implementar circuit breaker em chamadas a APIs externas?",opts:["Try/catch com retry infinito","Monitora falhas e 'abre' após threshold — rejeita imediatamente durante cooldown, evita cascata de falhas","Aumentar timeout","Mais threads"],ans:1,exp:"Closed → Open (falhou N vezes, rejeita sem tentar) → Half-Open (testa). Evita que falha de dependência derrube o sistema. Lib: opossum (Node)."},
+{cat:"PostgreSQL",q:"O que é table partitioning e quando aplicar?",opts:["Dividir banco em servidores","Dividir tabela grande em partições físicas por critério — queries no período atual só leem a partição relevante","Tipo de índice","Replicação"],ans:1,exp:"Tabela de logs com anos de dados: partição por mês. SELECT do mês atual não varre histórico completo. Partition pruning automático."},
+{cat:"Segurança",q:"O que é timing attack e como se proteger?",opts:["Ataque de performance","Medir tempo de resposta para inferir dados — === para no primeiro char diferente. Use crypto.timingSafeEqual (Node) ou hmac.compare_digest (Python)","Tipo de DoS","SQL Injection"],ans:1,exp:"Comparação convencional é mais rápida quando strings divergem cedo — atacante mede tempo. timingSafeEqual: mesmo tempo independente de onde diverge."},
+{cat:"C# / .NET",q:"O que é CQRS e quando aplicar?",opts:["Tipo de banco","Separa leitura (Queries) de escrita (Commands) em modelos distintos — útil quando reads e writes têm requisitos muito diferentes","Design de UI","Autenticação"],ans:1,exp:"Reads: modelo denormalizado, cache, read replicas. Writes: modelo normalizado, validações. Complexidade extra — só aplique quando o domínio justificar."},
+{cat:"Python",q:"O que é Pydantic e por que usar com FastAPI?",opts:["Framework de testes","Validação e serialização com type hints — FastAPI valida request body, retorna 422 se inválido, serializa response e gera OpenAPI automático","ORM","Biblioteca ML"],ans:1,exp:"class UserCreate(BaseModel): nome: str; email: EmailStr. FastAPI valida automaticamente. Pydantic v2 é 5-50x mais rápido (core em Rust)."},
+{cat:"React",q:"O que é code splitting com React.lazy?",opts:["Dividir CSS","React.lazy(() => import('./Comp')) carrega chunk JS apenas quando renderizado — bundle inicial menor, carregamento sob demanda","Substituir webpack","Memoização"],ans:1,exp:"Sem code splitting: todo JS em bundle enorme. Com lazy: Dashboard.js só é baixado quando usuário navega ao Dashboard. Vite cria chunks automaticamente."},
+{cat:"PostgreSQL",q:"Como resolver N+1 queries?",opts:["Cache no frontend","N+1: 1 query para lista + N para cada item. Solução: JOIN ou DataLoader — 2 queries totais independente do tamanho","Paginação","Mais índices"],ans:1,exp:"Errado: loop com SELECT WHERE id=$1 por item. Certo: JOIN na query principal (1 query) ou DataLoader com SELECT WHERE id IN ($1,$2...)."},
+{cat:"Git",q:"O que é git bisect?",opts:["Alias de merge","Busca binária no histórico — marca commit bom e ruim, divide ao meio, você testa e marca, até encontrar o commit exato do bug","Tipo de rebase","Merge visual"],ans:1,exp:"git bisect start → git bisect bad HEAD → git bisect good v1.0 → testa → git bisect good/bad → repete. Em 30 commits: ~5 iterações (log2)."},
+{cat:"IA / Agentes / MCP",q:"Como evitar alucinações em LLMs em aplicações de produção?",opts:["Aumentar temperatura","RAG com fontes verificadas + temperatura baixa + pedir citações + validação por segunda chamada + system prompt restritivo com instrução de admitir desconhecimento","Usar modelos maiores","Aumentar context window"],ans:1,exp:"Alucinação: modelo gera conteúdo falso com confiança. RAG fundamenta em dados reais. Temperatura 0 para dados. Pedir 'cite a fonte ou diga que não sabe'. Validar resposta crítica com outra chamada."},
+{cat:"IA / Agentes / MCP",q:"O que é tool use / function calling em LLMs?",opts:["Executar código Python","LLM recebe definições de funções (nome, descrição, params), decide quando chamar, API executa, resultado volta ao modelo — base de todos os agentes autônomos","Tipo de fine-tuning","Forma de treinar o modelo"],ans:1,exp:"Modelo não executa código — ele retorna JSON indicando qual função chamar com quais params. A aplicação executa e devolve o resultado. Loop que permite agentes multistep."},
+{cat:"IA / Agentes / MCP",q:"Qual a diferença entre fine-tuning e RAG?",opts:["São a mesma coisa","Fine-tuning: re-treina o modelo com dados específicos (caro, estático). RAG: recupera dados em tempo real e injeta no contexto (barato, dinâmico e atualizável)","Fine-tuning é sempre melhor","RAG não funciona com Claude"],ans:1,exp:"RAG: ideal para dados que mudam frequentemente (documentos, base de conhecimento). Fine-tuning: para estilo, tom e conhecimento estável. Geralmente RAG primeiro, fine-tuning se RAG não resolver."},
+{cat:"IA / Agentes / MCP",q:"O que é o MCP (Model Context Protocol) e como um servidor MCP é estruturado?",opts:["Protocolo HTTP especial","Padrão aberto que define como LLMs se conectam a ferramentas externas. Servidor MCP expõe: tools (funções chamáveis), resources (dados acessíveis), prompts (templates)","Método de compressão de tokens","Protocolo de autenticação para IA"],ans:1,exp:"Claude se conecta ao MCP Server via stdio ou SSE. Server expõe tools com schema JSON. Claude decide quando chamar — ex: MCP do GitHub expõe create_pr, list_issues. O OpenClaw usa MCP para conectar agentes a APIs externas."},
+{cat:"NoSQL",q:"Como implementar busca semântica com pgvector?",opts:["LIKE '%termo%'","CREATE EXTENSION vector; coluna VECTOR(1536); INSERT com embedding; SELECT ORDER BY coluna <-> $1::vector LIMIT 10 — busca por proximidade vetorial","Full text search","Redis SEARCH"],ans:1,exp:"pgvector adiciona tipo VECTOR ao PostgreSQL. <-> é distância euclidiana, <=> é cosine similarity. Criar índice HNSW ou IVFFlat para escala. Ideal para RAG sem banco vetorial separado."},
+{cat:"Python",q:"Como estruturar um agente de IA com LangChain ou LlamaIndex?",opts:["Não é possível em Python","LlamaIndex/LangChain: definir tools (funções + descrição), criar Agent com LLM + tools, loop de raciocínio automático (ReAct pattern): pensar → agir → observar → repetir","Usar apenas requests","Criar modelo próprio"],ans:1,exp:"ReAct (Reasoning + Acting): LLM pensa em voz alta, escolhe tool, recebe resultado, pensa novamente. LlamaIndex FunctionCallingAgent ou LangChain AgentExecutor. Para produção: LangGraph para controle de fluxo."},
+{cat:"Docker",q:"Como fazer zero-downtime deploy com Docker Swarm?",opts:["Parar tudo e subir novamente","docker service update --image nova:tag --update-parallelism 1 --update-delay 10s — Swarm atualiza réplicas uma a uma com health check entre cada uma","Reiniciar o servidor","Usar git pull direto"],ans:1,exp:"Rolling update: Swarm sobe nova réplica, aguarda health check passar, derruba a antiga. --update-parallelism controla quantas por vez. --rollback reverte se algo der errado. Zero downtime real."},
+{cat:"C# / .NET",q:"O que é middleware pipeline no ASP.NET Core e por que a ordem importa?",opts:["Configuração do banco","Cadeia de middlewares em ordem — request passa por todos antes do handler. Ordem crítica: CORS antes de Auth, Auth antes de endpoint","Tipo de controller","Filtro de erros"],ans:1,exp:"app.UseHttpsRedirection() → app.UseCors() → app.UseAuthentication() → app.UseAuthorization() → app.MapControllers(). Inverter quebra preflight CORS. Use retorna ao pipeline, Run encerra a cadeia."},
+{cat:"Segurança",q:"O que é SSRF e como mitigar?",opts:["Tipo de XSS","Atacante faz servidor executar requests para endereços internos. Mitigação: whitelist de domínios, rejeitar IPs privados (10.x, 192.168.x, 169.254.x), validar URLs","Força bruta","SQL Injection"],ans:1,exp:"Ex: endpoint de preview de URL aceita qualquer input → atacante passa http://169.254.169.254 (metadata AWS). Validar e sanitizar todas as URLs de destino com allowlist."},
+{cat:"SQL Geral",q:"O que é CTE recursiva e quando usar?",opts:["CTE com erro","WITH RECURSIVE para consultar dados hierárquicos (árvores, categorias, organogramas) sem múltiplos self-joins ou recursão no código","Subquery simples","CTE que repete"],ans:1,exp:"WITH RECURSIVE cat AS (SELECT * FROM cats WHERE parent IS NULL UNION ALL SELECT c.* FROM cats c JOIN cat ON c.parent=cat.id) SELECT * FROM cat. Substitui recursão na aplicação."},
+]
 };
+
+// ============================================================
+// STATE
+// ============================================================
+var curDiff='mid';
+var selCats=null;
+var qqArr=[];
+var curQ=0;
+var results=[];
+var answered=false;
+var activeGroup='Todos';
+var GROUPS=['Todos','Frontend','Backend','Banco de Dados','DevOps','IA'];
+
+function getAllCats(){
+  var all=[];
+  var qs=QS.easy.concat(QS.mid).concat(QS.hard);
+  for(var i=0;i<qs.length;i++){
+    if(all.indexOf(qs[i].cat)===-1) all.push(qs[i].cat);
+  }
+  return all.sort();
+}
+
+function initSelCats(){
+  selCats=getAllCats();
+}
 
 // ============================================================
 // RENDER TOPICS
 // ============================================================
-const GROUPS = ['Todos','Frontend','Backend','Banco de Dados','DevOps'];
-let activeGroup = 'Todos';
-
 function renderFtabs(){
-  const el = document.getElementById('ftabs');
-  el.innerHTML = GROUPS.map(g=>`<button class="ftab ${g===activeGroup?'active':''}" onclick="setGroup('${g}')">${g}</button>`).join('');
+  var el=document.getElementById('ftabs');
+  var html='';
+  for(var i=0;i<GROUPS.length;i++){
+    var g=GROUPS[i];
+    var cls='ftab'+(g===activeGroup?' on':'');
+    html+='<button class="'+cls+'" data-group="'+g+'">'+g+'</button>';
+  }
+  el.innerHTML=html;
+  var btns=el.querySelectorAll('.ftab');
+  for(var j=0;j<btns.length;j++){
+    btns[j].addEventListener('click',function(){
+      activeGroup=this.getAttribute('data-group');
+      renderFtabs();
+      renderTopics();
+    });
+  }
 }
-function setGroup(g){activeGroup=g;renderFtabs();renderTopics();}
 
 function renderTopics(){
-  const filtered = activeGroup==='Todos'?TOPICS:TOPICS.filter(t=>t.group===activeGroup);
-  document.getElementById('tgrid').innerHTML = filtered.map(t=>`
-    <div class="tc" data-cat="${t.cat}" style="--cc:${t.color}" onclick="toggleTopic(this)">
-      <div class="tc-top">
-        <div class="tc-icon" style="color:${t.color}">${t.icon}</div>
-        <div><div class="tc-name">${t.name}</div><div class="tc-count">${t.concepts.length} conceitos · ${t.group}</div></div>
-      </div>
-      <div class="tc-desc">${t.desc}</div>
-      <button class="tbtn">▼ Ver conceitos</button>
-      <div class="tc-body">
-        ${t.concepts.map(c=>`<div class="concept"><div class="c-q">${c.q}</div><div class="c-a">${c.a}</div></div>`).join('')}
-      </div>
-    </div>`).join('');
-}
-
-function toggleTopic(card){
-  const body=card.querySelector('.tc-body');
-  const btn=card.querySelector('.tbtn');
-  const open=body.classList.toggle('open');
-  card.classList.toggle('open',open);
-  btn.textContent=open?'▲ Fechar':'▼ Ver conceitos';
+  var filtered=activeGroup==='Todos'?TOPICS:TOPICS.filter(function(t){return t.group===activeGroup;});
+  var html='';
+  for(var i=0;i<filtered.length;i++){
+    var t=filtered[i];
+    html+='<div class="tc" style="--cc:'+t.color+'" data-tcat="'+t.cat+'">';
+    html+='<div class="ttop">';
+    html+='<div class="tic" style="color:'+t.color+'">'+t.icon+'</div>';
+    html+='<div><div class="tn">'+t.name+'</div><div class="tk">'+t.concepts.length+' conceitos · '+t.group+'</div></div>';
+    html+='</div>';
+    html+='<div class="td">'+t.desc+'</div>';
+    html+='<button class="tog">▼ Ver conceitos</button>';
+    html+='<div class="tbdy">';
+    for(var j=0;j<t.concepts.length;j++){
+      html+='<div class="cpt"><div class="cq">'+t.concepts[j].q+'</div><div class="ca">'+t.concepts[j].a+'</div></div>';
+    }
+    html+='</div>';
+    html+='</div>';
+  }
+  var grid=document.getElementById('tgrid');
+  grid.innerHTML=html;
+  var cards=grid.querySelectorAll('.tc');
+  for(var k=0;k<cards.length;k++){
+    cards[k].addEventListener('click',function(){
+      var body=this.querySelector('.tbdy');
+      var btn=this.querySelector('.tog');
+      var isOpen=body.classList.contains('on');
+      body.classList.toggle('on',!isOpen);
+      this.classList.toggle('on',!isOpen);
+      btn.textContent=isOpen?'▼ Ver conceitos':'▲ Fechar';
+    });
+  }
 }
 
 // ============================================================
-// QUIZ
+// QUIZ CONFIG
 // ============================================================
-const ALL_CATS = [...new Set([...QS.easy,...QS.mid,...QS.hard].map(q=>q.cat))].sort();
-let selDiff='mid', selCats=new Set(ALL_CATS), qqArr=[], curQ=0, results=[], answered=false;
-
 function renderCsel(){
-  document.getElementById('csel').innerHTML = ALL_CATS.map(c=>`
-    <button class="cc ${selCats.has(c)?'active':''}" onclick="toggleCat('${c}')">${c}</button>`).join('');
-}
-function toggleCat(c){selCats.has(c)?selCats.size>1&&selCats.delete(c):selCats.add(c);renderCsel();}
-function selDiff(d){
-  selectedDiff=d;
-  document.querySelectorAll('.dc').forEach(el=>el.classList.toggle('sel',el.dataset.d===d));
-  selDiff=d;
-}
-// fix naming collision
-function selDiffFn(d){
-  selDiff=d;
-  document.querySelectorAll('.dc').forEach(el=>el.classList.toggle('sel',el.dataset.d===d));
-}
-document.querySelectorAll('.dc').forEach(el=>el.addEventListener('click',()=>selDiffFn(el.dataset.d)));
-
-function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b;}
-
-function startQ(){
-  const pool = QS[selDiff].filter(q=>[...selCats].some(c=>q.cat===c));
-  if(pool.length<5){alert('Selecione mais categorias.');return;}
-  qqArr=shuffle(pool).slice(0,QS[selDiff].length);
-  curQ=0;results=[];answered=false;
-  show('qcfg',false);show('qres',false);show('qact',true);
-  const dl={easy:'🟢 Júnior',mid:'🟡 Pleno',hard:'🔴 Sênior'};
-  const dc={easy:'rgba(46,204,113,.15)',mid:'rgba(201,168,76,.15)',hard:'rgba(231,76,60,.15)'};
-  const b=document.getElementById('qdbadge');b.textContent=dl[selDiff];b.style.background=dc[selDiff];
-  renderQ();
+  var cats=getAllCats();
+  var html='';
+  for(var i=0;i<cats.length;i++){
+    var c=cats[i];
+    var on=selCats.indexOf(c)!==-1;
+    html+='<button class="cc'+(on?' on':'')+'" data-cat="'+c+'">'+c+'</button>';
+  }
+  var el=document.getElementById('csel');
+  el.innerHTML=html;
+  var btns=el.querySelectorAll('.cc');
+  for(var j=0;j<btns.length;j++){
+    btns[j].addEventListener('click',function(){
+      var c=this.getAttribute('data-cat');
+      var idx=selCats.indexOf(c);
+      if(idx!==-1){
+        if(selCats.length>1){ selCats.splice(idx,1); }
+      } else {
+        selCats.push(c);
+      }
+      renderCsel();
+    });
+  }
 }
 
-function renderQ(){
-  const q=qqArr[curQ],tot=qqArr.length;
+function initDiffBtns(){
+  var ids=['easy','mid','hard'];
+  for(var i=0;i<ids.length;i++){
+    document.getElementById('d-'+ids[i]).addEventListener('click',(function(d){
+      return function(){
+        curDiff=d;
+        document.querySelectorAll('.dc').forEach(function(el){
+          el.classList.toggle('on',el.id==='d-'+d);
+        });
+      };
+    })(ids[i]));
+  }
+}
+
+// ============================================================
+// QUIZ LOGIC
+// ============================================================
+function shuffle(a){
+  var b=a.slice();
+  for(var i=b.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=b[i];b[i]=b[j];b[j]=tmp;
+  }
+  return b;
+}
+
+function startQuiz(){
+  var pool=QS[curDiff].filter(function(q){
+    return selCats.indexOf(q.cat)!==-1;
+  });
+  if(pool.length<5){ alert('Selecione mais categorias para ter perguntas suficientes.'); return; }
+  qqArr=shuffle(pool).slice(0,QS[curDiff].length);
+  curQ=0; results=[]; answered=false;
+  showEl('qcfg',false); showEl('qres',false); showEl('qactive',true);
+  var dl={easy:'🟢 Júnior',mid:'🟡 Pleno',hard:'🔴 Sênior'};
+  var dc={easy:'rgba(46,204,113,.15)',mid:'rgba(201,168,76,.15)',hard:'rgba(231,76,60,.15)'};
+  var b=document.getElementById('qbadge');
+  b.textContent=dl[curDiff]; b.style.background=dc[curDiff];
+  renderQuestion();
+}
+
+function renderQuestion(){
+  var q=qqArr[curQ];
+  var tot=qqArr.length;
   document.getElementById('qpf').style.width=(curQ/tot*100)+'%';
-  document.getElementById('qpos').textContent=`Pergunta ${curQ+1} de ${tot}`;
+  document.getElementById('qpos').textContent='Pergunta '+(curQ+1)+' de '+tot;
   document.getElementById('qcat').textContent=q.cat;
-  document.getElementById('qtext').textContent=q.q;
-  const L=['A','B','C','D'];
-  document.getElementById('qopts').innerHTML=q.opts.map((o,i)=>`
-    <button class="opt" onclick="selOpt(${i})"><span class="ol">${L[i]}</span><span>${o}</span></button>`).join('');
+  document.getElementById('qtxt').textContent=q.q;
+  var L=['A','B','C','D'];
+  var html='';
+  for(var i=0;i<q.opts.length;i++){
+    html+='<button class="opt" data-idx="'+i+'"><span class="ol">'+L[i]+'</span><span>'+q.opts[i]+'</span></button>';
+  }
+  var opts=document.getElementById('qopts');
+  opts.innerHTML=html;
+  var btns=opts.querySelectorAll('.opt');
+  for(var j=0;j<btns.length;j++){
+    btns[j].addEventListener('click',(function(idx){
+      return function(){ selectOpt(idx); };
+    })(j));
+  }
   document.getElementById('qfb').className='fb';
-  document.getElementById('qnext').className='nbtn';
-  document.getElementById('qnext').textContent=curQ===qqArr.length-1?'Ver resultado →':'Próxima →';
+  var nxt=document.getElementById('qnxt');
+  nxt.className='nxt';
+  nxt.textContent=curQ===qqArr.length-1?'Ver resultado →':'Próxima →';
   answered=false;
 }
 
-function selOpt(i){
-  if(answered)return;answered=true;
-  const q=qqArr[curQ],correct=i===q.ans;
-  results.push({q:q.q,cat:q.cat,correct,ans:q.ans,opts:q.opts,exp:q.exp});
-  document.querySelectorAll('.opt').forEach((el,idx)=>{
-    el.classList.add('dis');
-    if(idx===q.ans)el.classList.add('cor');
-    if(idx===i&&i!==q.ans)el.classList.add('wrg');
-  });
-  const fb=document.getElementById('qfb');
+function selectOpt(i){
+  if(answered) return;
+  answered=true;
+  var q=qqArr[curQ];
+  var correct=i===q.ans;
+  results.push({q:q.q,cat:q.cat,correct:correct,ans:q.ans,opts:q.opts,exp:q.exp});
+  var btns=document.getElementById('qopts').querySelectorAll('.opt');
+  for(var j=0;j<btns.length;j++){
+    btns[j].classList.add('dis');
+    if(j===q.ans) btns[j].classList.add('cor');
+    if(j===i&&i!==q.ans) btns[j].classList.add('wrg');
+  }
+  var fb=document.getElementById('qfb');
   document.getElementById('fbt').textContent=correct?'✓ Correto!':'✗ Incorreto';
   document.getElementById('fbb').textContent=q.exp;
-  fb.className='fb show '+(correct?'cfb':'wfb');
-  document.getElementById('qnext').className='nbtn show';
+  fb.className='fb on '+(correct?'ok':'no');
+  document.getElementById('qnxt').className='nxt on';
 }
 
-function nextQ(){curQ<qqArr.length-1?(curQ++,renderQ()):showResult();}
+function nextQuestion(){
+  if(curQ<qqArr.length-1){ curQ++; renderQuestion(); }
+  else { showResult(); }
+}
 
 function showResult(){
-  show('qact',false);show('qres',true);
-  const tot=results.length,right=results.filter(r=>r.correct).length,wrong=tot-right,pct=Math.round(right/tot*100);
+  showEl('qactive',false); showEl('qres',true);
+  var tot=results.length;
+  var right=results.filter(function(r){return r.correct;}).length;
+  var wrong=tot-right;
+  var pct=Math.round(right/tot*100);
   document.getElementById('rs-t').textContent=tot;
   document.getElementById('rs-r').textContent=right;
   document.getElementById('rs-w').textContent=wrong;
   document.getElementById('rs-p').textContent=pct+'%';
   document.getElementById('rpct').textContent=pct+'%';
-  const arc=document.getElementById('rarc');
-  const off=358-(pct/100)*358;
-  setTimeout(()=>{arc.style.strokeDashoffset=off;arc.style.stroke=pct>=80?'#2ecc71':pct>=60?'#c9a84c':'#e74c3c';},100);
-  const msgs=[[85,'Excelente!','Você está pronto para a entrevista.'],[70,'Muito bom!','Revise os erros e estará pronto.'],[50,'Continue estudando','Aprofunde alguns conceitos antes da entrevista.'],[0,'Precisa estudar mais','Revise o módulo de estudo e tente novamente.']];
-  const [,t,s]=msgs.find(([th])=>pct>=th);
-  document.getElementById('rtitle').textContent=t;
-  document.getElementById('rsub').textContent=s;
-  document.getElementById('ritems').innerHTML=results.map(r=>`
-    <div class="ri">
-      <div class="ri-ico">${r.correct?'✓':'✗'}</div>
-      <div><div class="ri-q">${r.q}</div><div class="ri-a">${r.correct?'Correto':'Correto: '+r.opts[r.ans]}</div></div>
-    </div>`).join('');
+  var arc=document.getElementById('rarc');
+  setTimeout(function(){
+    arc.style.strokeDashoffset=358-(pct/100)*358;
+    arc.style.stroke=pct>=80?'#2ecc71':pct>=60?'#c9a84c':'#e74c3c';
+  },100);
+  var msgs=[[85,'Excelente!','Você está pronto para a entrevista.'],[70,'Muito bom!','Revise os erros e estará pronto.'],[50,'Continue estudando','Aprofunde antes da entrevista.'],[0,'Precisa estudar mais','Revise o módulo e tente novamente.']];
+  var msg=msgs.find(function(m){return pct>=m[0];});
+  document.getElementById('rtit').textContent=msg[1];
+  document.getElementById('rsub').textContent=msg[2];
+  var html='';
+  for(var i=0;i<results.length;i++){
+    var r=results[i];
+    html+='<div class="ri">';
+    html+='<div class="rii">'+(r.correct?'✓':'✗')+'</div>';
+    html+='<div><div class="riq">'+r.q+'</div>';
+    html+='<div class="ria">'+(r.correct?'Correto':'Correto: '+r.opts[r.ans])+'</div></div>';
+    html+='</div>';
+  }
+  document.getElementById('ritems').innerHTML=html;
 }
 
-function show(id,v){document.getElementById(id).style.display=v?'block':'none';}
-function retryQ(){curQ=0;results=[];answered=false;show('qres',false);show('qact',true);qqArr=shuffle(qqArr);document.getElementById('rarc').style.strokeDashoffset='358';renderQ();}
-function backCfg(){show('qres',false);show('qact',false);show('qcfg',true);}
+function showEl(id,v){
+  document.getElementById(id).style.display=v?'block':'none';
+}
 
+function retryQuiz(){
+  curQ=0; results=[]; answered=false;
+  showEl('qres',false); showEl('qactive',true);
+  qqArr=shuffle(qqArr);
+  document.getElementById('rarc').style.strokeDashoffset='358';
+  renderQuestion();
+}
+
+function backCfg(){
+  showEl('qres',false); showEl('qactive',false); showEl('qcfg',true);
+}
+
+// ============================================================
 // INIT
-renderFtabs();renderTopics();renderCsel();
-document.getElementById('cnt-top').textContent=TOPICS.length;
-document.getElementById('cnt-conc').textContent=TOPICS.reduce((s,t)=>s+t.concepts.length,0)+'+';
+// ============================================================
+initSelCats();
+renderFtabs();
+renderTopics();
+renderCsel();
+initDiffBtns();
+
+document.getElementById('gobtn').addEventListener('click',startQuiz);
+document.getElementById('qnxt').addEventListener('click',nextQuestion);
+document.getElementById('rbretry').addEventListener('click',retryQuiz);
+document.getElementById('rbcfg').addEventListener('click',backCfg);
+document.getElementById('rbtop').addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+document.getElementById('cnt-t').textContent=TOPICS.length;
+document.getElementById('cnt-c').textContent=TOPICS.reduce(function(s,t){return s+t.concepts.length;},0)+'+';
 </script>
 </body>
 </html>
